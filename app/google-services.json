@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "7192090407",
+    "project_id": "mefoody-6b964",
+    "storage_bucket": "mefoody-6b964.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7192090407:android:a96cc7e6378baab62bbb02",
+        "android_client_info": {
+          "package_name": "com.example.mefoody"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7192090407-21b7c3f2tfqccqgbmgj2vtmlenhcd5ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARhDFQSXfHb6uTj_IYcfJruCRTiJp7U6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7192090407-21b7c3f2tfqccqgbmgj2vtmlenhcd5ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
