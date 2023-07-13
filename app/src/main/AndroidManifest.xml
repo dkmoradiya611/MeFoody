@@ -13,16 +13,37 @@
         android:theme="@style/Theme.MeFoody"
         tools:targetApi="31">
         <activity
+            android:name=".Delivery_Register"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_Loginphone"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_Loginemail"
+            android:exported="false" />
+        <activity
+            android:name=".Cust_Register"
+            android:exported="false" />
+        <activity
+            android:name=".Cust_Loginphone"
+            android:exported="false" />
+        <activity
+            android:name=".Cust_Loginemail"
+            android:exported="false" />
+        <activity
+            android:name=".Chefregister"
+            android:exported="false" />
+        <activity
+            android:name=".Chefloginphone"
+            android:exported="false" />
+        <activity
+            android:name=".Chefloginemail"
+            android:exported="false" />
+        <activity
             android:name=".Chooseone"
             android:exported="false" />
         <activity
             android:name=".MainMenu"
-            android:exported="false" />
-        <activity
-            android:name=".login"
-            android:exported="false" />
-        <activity
-            android:name=".registration"
             android:exported="false" />
         <activity
             android:name=".splash"
