@@ -15,6 +15,7 @@ public class MainMenu extends AppCompatActivity {
     ImageView bgimage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         final Animation zoomin= AnimationUtils.loadAnimation(this,R.anim.zoomin);
