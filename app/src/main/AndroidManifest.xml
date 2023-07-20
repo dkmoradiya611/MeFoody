@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MeFoody"
         tools:targetApi="31">
         <activity
+            android:name=".chef_phonverify"
+            android:exported="false" />
+        <activity
+            android:name=".chef_verifyphone"
+            android:exported="false" />
+        <activity
             android:name=".Delivery_Register"
             android:exported="false" />
         <activity
