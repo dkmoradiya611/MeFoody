@@ -40,7 +40,7 @@
             android:name=".Chefloginemail"
             android:exported="false" />
         <activity
-            android:name=".Chooseone"
+            android:name=".chooseone"
             android:exported="false" />
         <activity
             android:name=".MainMenu"

@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
- public class Chooseone extends AppCompatActivity {
+ public class chooseone extends AppCompatActivity {
     Button chef,customer,deliveryperson;
     Intent intent;
     String type;
@@ -56,17 +56,17 @@ import android.widget.Button;
             @Override
             public void onClick(View view) {
                 if (type.equals("Email")){
-                    Intent loginemail=new Intent(Chooseone.this,Chefloginemail.class);
+                    Intent loginemail=new Intent(chooseone.this,Chefloginemail.class);
                     startActivity(loginemail);
-                    finish();
+
                 }
                 if (type.equals("Phone")){
-                    Intent loginphone=new Intent(Chooseone.this,Chefloginphone.class);
+                    Intent loginphone=new Intent(chooseone.this,Chefloginphone.class);
                     startActivity(loginphone);
-                    finish();
+
                 }
                 if (type.equals("Signup")){
-                    Intent register=new Intent(Chooseone.this,Chefregister.class);
+                    Intent register=new Intent(chooseone.this,Chefregister.class);
                     startActivity(register);
                 }
             }
@@ -75,17 +75,17 @@ import android.widget.Button;
             @Override
             public void onClick(View view) {
                 if (type.equals("Email")){
-                    Intent loginemaildel=new Intent(Chooseone.this,Cust_Loginemail.class);
+                    Intent loginemaildel=new Intent(chooseone.this,Cust_Loginemail.class);
                     startActivity(loginemaildel);
-                    finish();
+
                 }
                 if (type.equals("Phone")){
-                    Intent loginphonedel=new Intent(Chooseone.this,Cust_Loginphone.class);
+                    Intent loginphonedel=new Intent(chooseone.this,Cust_Loginphone.class);
                     startActivity(loginphonedel);
-                    finish();
+
                 }
                 if (type.equals("Signup")){
-                    Intent registerdel=new Intent(Chooseone.this,Cust_Register.class);
+                    Intent registerdel=new Intent(chooseone.this,Cust_Register.class);
                     startActivity(registerdel);
                 }
             }
@@ -94,17 +94,17 @@ import android.widget.Button;
             @Override
             public void onClick(View view) {
                 if (type.equals("Email")){
-                    Intent loginemail=new Intent(Chooseone.this,Delivery_Loginemail.class);
+                    Intent loginemail=new Intent(chooseone.this,Delivery_Loginemail.class);
                     startActivity(loginemail);
-                    finish();
+
                 }
                 if (type.equals("Phone")){
-                    Intent loginphone=new Intent(Chooseone.this,Delivery_Loginphone.class);
+                    Intent loginphone=new Intent(chooseone.this,Delivery_Loginphone.class);
                     startActivity(loginphone);
-                    finish();
+
                 }
                 if (type.equals("Signup")){
-                    Intent register=new Intent(Chooseone.this,Delivery_Register.class);
+                    Intent register=new Intent(chooseone.this,Delivery_Register.class);
                     startActivity(register);
                 }
             }

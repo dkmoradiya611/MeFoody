@@ -66,28 +66,25 @@ public class MainMenu extends AppCompatActivity {
         signinemail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signemail=new Intent(MainMenu.this,Chooseone.class);
+                Intent signemail=new Intent(MainMenu.this, chooseone.class);
                 signemail.putExtra("Home","Email");
                 startActivity(signemail);
-                finish();
             }
         });
         signinphone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signphone=new Intent(MainMenu.this,Chooseone.class);
+                Intent signphone=new Intent(MainMenu.this, chooseone.class);
                 signphone.putExtra("Home","Phone");
                 startActivity(signphone);
-                finish();
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signup=new Intent(MainMenu.this,Chooseone.class);
+                Intent signup=new Intent(MainMenu.this, chooseone.class);
                 signup.putExtra("Home","Signup");
                 startActivity(signup);
-                finish();
             }
         });
     }
