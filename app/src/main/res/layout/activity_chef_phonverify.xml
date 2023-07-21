@@ -36,7 +36,7 @@
             android:textSize="28dp"
             android:textStyle="bold"
             android:ems="10"
-            android:id="@+id/mobileno"
+            android:id="@+id/txtotpchefphverify"
             android:layout_marginTop="15dp"/>
         <Button
             android:layout_width="match_parent"
@@ -47,14 +47,14 @@
             android:textSize="30sp"
             android:textStyle="italic"
             android:textColor="@color/white"
-            android:id="@+id/btnverify"/>
+            android:id="@+id/btnverifychefpvery"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/btnred"
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
-            android:id="@+id/bynresend"
+            android:id="@+id/btnrsendchefverify"
             android:textSize="25dp"
             android:text="Resend Otp"/>
         <TextView

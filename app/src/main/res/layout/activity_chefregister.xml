@@ -28,7 +28,7 @@
             android:orientation="vertical" >
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Firstname"
+                android:id="@+id/txtfnamecustreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
@@ -42,7 +42,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Lastname"
+                android:id="@+id/txtlnamechefreg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="11dp">
@@ -56,7 +56,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Email"
+                android:id="@+id/txtemailchefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp">
@@ -72,7 +72,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Pwd"
+                android:id="@+id/txtpasschefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
@@ -86,7 +86,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Cpass"
+                android:id="@+id/txtcpasschefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
@@ -106,12 +106,12 @@
                 android:orientation="horizontal">
 
                 <com.hbb20.CountryCodePicker
-                    android:id="@+id/countryCode"
+                    android:id="@+id/ccdchefreg"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"/>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/Mobileno"
+                    android:id="@+id/txtmnochefreg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -125,7 +125,7 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/houseno"
+                android:id="@+id/txthnochefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp">
@@ -138,7 +138,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Area"
+                android:id="@+id/txtareachefreg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -150,7 +150,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Pincode"
+                android:id="@+id/txtpcodechefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp">
@@ -171,7 +171,7 @@
                 android:textSize="14sp" />
 
             <Spinner
-                android:id="@+id/Statee"
+                android:id="@+id/ddlstatechefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -185,13 +185,13 @@
                 android:text="City" />
 
             <Spinner
-                android:id="@+id/City"
+                android:id="@+id/ddlcitychefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp" />
 
             <Button
-                android:id="@+id/signup"
+                android:id="@+id/btnchefreg"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -253,7 +253,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/email"
+                    android:id="@+id/btnemailchefreg"
                     android:layout_width="95dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
@@ -264,7 +264,7 @@
                     android:textColor="#FFFFFF" />
 
                 <Button
-                    android:id="@+id/phone"
+                    android:id="@+id/btnphonechefreg"
                     android:layout_width="97dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
