@@ -51,7 +51,7 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
-                android:id="@+id/forgotpass"
+                android:id="@+id/forgotpassdelloginemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
