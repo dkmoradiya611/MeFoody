@@ -2,7 +2,6 @@ package com.example.mefoody;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.executor.TaskExecutor;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,37 +24,38 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class chef_phonverify extends AppCompatActivity {
-    Button verify,resend;
+public class chefsendotp extends AppCompatActivity {
+
+    Button verify, resend;
     TextView txt;
     EditText entercode;
-    String verificationid,phoneno;
+    String verificationid, phoneno;
     FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chef_phonverify);
+        setContentView(R.layout.activity_chefsendotp);
 
-        phoneno=getIntent().getStringExtra("phonenumber").trim();
+        phoneno = getIntent().getStringExtra("Phonenum").trim();
 
-        entercode=findViewById(R.id.txtotpchefphverify);
-        txt=findViewById(R.id.text);
-        resend=findViewById(R.id.btnresendchefphverify);
-        verify=findViewById(R.id.btnverifychefpvery);
-        auth=FirebaseAuth.getInstance();
+        entercode = findViewById(R.id.txtotpsendchef);
+        txt = findViewById(R.id.text1);
+        resend = findViewById(R.id.btnresendsendotpchef);
+        verify = findViewById(R.id.btnverifysendotpchef);
+        auth = FirebaseAuth.getInstance();
 
         resend.setVisibility(View.INVISIBLE);
         txt.setVisibility(View.INVISIBLE);
 
         sendverificationcode(phoneno);
-
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String code=entercode.getText().toString().trim();
+                String code = entercode.getText().toString().trim();
                 resend.setVisibility(View.INVISIBLE);
 
-                if (code.isEmpty() && code.length()<6){
+                if (code.isEmpty() && code.length() < 6) {
                     entercode.setError("Enter Code");
                     entercode.requestFocus();
                     return;
@@ -63,12 +63,12 @@ public class chef_phonverify extends AppCompatActivity {
                 verifycode(code);
             }
         });
-        new CountDownTimer(60000,1000){
+        new CountDownTimer(60000, 1000) {
 
             @Override
             public void onTick(long l) {
                 txt.setVisibility(View.VISIBLE);
-                txt.setText("Resend Code Within"+l/1000+"Seconds");
+                txt.setText("Resend Code Within" + l / 1000 + "Seconds");
 
             }
 
@@ -85,12 +85,12 @@ public class chef_phonverify extends AppCompatActivity {
                 resend.setVisibility(View.INVISIBLE);
                 resendotp(phoneno);
 
-                new CountDownTimer(60000,1000){
+                new CountDownTimer(60000, 1000) {
 
                     @Override
                     public void onTick(long l) {
                         txt.setVisibility(View.VISIBLE);
-                        txt.setText("Resend Code Within"+l/1000+"Seconds");
+                        txt.setText("Resend Code Within" + l / 1000 + " Seconds");
 
                     }
 
@@ -108,8 +108,7 @@ public class chef_phonverify extends AppCompatActivity {
         sendverificationcode(phonenum);
     }
 
-    private void sendverificationcode(String number)
-    {
+    private void sendverificationcode(String number) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 number,
                 60L,
@@ -118,18 +117,18 @@ public class chef_phonverify extends AppCompatActivity {
                 mcallback
         );
     }
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback=new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
-        public void onCodeSent(String s,PhoneAuthProvider.ForceResendingToken forceResendingToken){
-            super.onCodeSent(s,forceResendingToken);
-            verificationid=s;
+        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+            verificationid = s;
         }
 
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-            String code=phoneAuthCredential.getSmsCode();
-            if (code!=null)
-            {
+            String code = phoneAuthCredential.getSmsCode();
+            if (code != null) {
                 entercode.setText(code);
                 verifycode(code);
             }
@@ -137,27 +136,21 @@ public class chef_phonverify extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(chef_phonverify.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(chefsendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 
     private void verifycode(String code) {
-        PhoneAuthCredential credential=PhoneAuthProvider.getCredential(verificationid,code);
-        linkcredential(credential);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationid, code);
+        signinwithphone(credential);
     }
 
-    private void linkcredential(PhoneAuthCredential credential) {
-        auth.getCurrentUser().linkWithCredential(credential)
-                .addOnCompleteListener(chef_phonverify.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Intent intent=new Intent(chef_phonverify.this, MainMenu.class);
-                            startActivity(intent);
-                        }else {
-                            reusablecodeforall.ShowAlert(chef_phonverify.this,"Error",task.getException().getMessage());
-                        }
-                    }
-                });
+    private void signinwithphone(PhoneAuthCredential credential) {
+        auth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+            }
+        })
     }
 }

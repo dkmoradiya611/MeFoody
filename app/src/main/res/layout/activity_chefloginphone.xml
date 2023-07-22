@@ -66,7 +66,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/acsignup"
+            android:id="@+id/crtactchefloginphone"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_marginTop="13dp"
@@ -118,7 +118,7 @@
             android:textColor="#090909"/>
 
         <Button
-            android:id="@+id/btnemailclogphone"
+            android:id="@+id/btnemailchefloginphone"
             android:layout_width="105dp"
             android:layout_height="40dp"
             android:layout_gravity="center"

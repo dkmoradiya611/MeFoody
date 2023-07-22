@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pic6"
-    tools:context=".chef_phonverify">
+    tools:context=".chefsendotp">
 
     <LinearLayout
         android:id="@+id/linearlayout"
@@ -36,7 +36,7 @@
             android:textSize="28dp"
             android:textStyle="bold"
             android:ems="10"
-            android:id="@+id/txtotpchefphverify"
+            android:id="@+id/txtotpsendchef"
             android:layout_marginTop="15dp"/>
         <Button
             android:layout_width="match_parent"
@@ -47,14 +47,14 @@
             android:textSize="30sp"
             android:textStyle="italic"
             android:textColor="@color/white"
-            android:id="@+id/btnverifychefpvery"/>
+            android:id="@+id/btnverifysendotpchef"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/btnred"
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
-            android:id="@+id/btnresendchefphverify"
+            android:id="@+id/btnresendsendotpchef"
             android:textSize="25dp"
             android:text="Resend Otp"/>
         <TextView
@@ -65,12 +65,10 @@
             android:textSize="28dp"
             android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:id="@+id/text"/>
+            android:id="@+id/text1"/>
 
 
 
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

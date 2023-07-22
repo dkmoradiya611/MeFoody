@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.mefoody.reusablecodeforall;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -65,17 +65,37 @@ public class Chefloginemail extends AppCompatActivity {
                                         startActivity(z);
                                     }
                                     else {
-                                        //ReusableCodeForAll.ShowAlert(Chefloginemail.this,"Verification failed","You Have Not Verified Your Email");
+                                        reusablecodeforall.ShowAlert(Chefloginemail.this,"Verification failed","You Have Not Verified Your Email");
                                     }
                                 }else {
                                     mdialog.dismiss();
-                                    //Reu
+                                    reusablecodeforall.ShowAlert(Chefloginemail.this,"Error",task.getException().getMessage());
                                 }
                             }
                         });
                     }
                 }
             });
+            signup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(Chefloginemail.this, Chefregister.class));
+                }
+            });
+            forgotpassword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(Chefloginemail.this,chefforgotpassword.class));
+                }
+            });
+            signinphone.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(Chefloginemail.this, Chefloginphone.class));
+                }
+            });
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage()  , Toast.LENGTH_SHORT).show();
         }
     }
 
