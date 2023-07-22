@@ -1,9 +1,5 @@
 package com.example.mefoody;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.executor.TaskExecutor;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,7 +28,8 @@ public class chef_phonverify extends AppCompatActivity {
     Button verify,resend;
     TextView txt;
     EditText entercode;
-    String verificationid,phoneno;
+    String verificationid;
+    String phoneno;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,19 +49,16 @@ public class chef_phonverify extends AppCompatActivity {
 
         sendverificationcode(phoneno);
 
-        verify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String code=entercode.getText().toString().trim();
-                resend.setVisibility(View.INVISIBLE);
+        verify.setOnClickListener(view -> {
+            String code=entercode.getText().toString().trim();
+            resend.setVisibility(View.INVISIBLE);
 
-                if (code.isEmpty() && code.length()<6){
-                    entercode.setError("Enter Code");
-                    entercode.requestFocus();
-                    return;
-                }
-                verifycode(code);
+            if (code.isEmpty() && code.length()<6){
+                entercode.setError("Enter Code");
+                entercode.requestFocus();
+                return;
             }
+            verifycode(code);
         });
         new CountDownTimer(60000,1000){
 
@@ -69,7 +66,6 @@ public class chef_phonverify extends AppCompatActivity {
             public void onTick(long l) {
                 txt.setVisibility(View.VISIBLE);
                 txt.setText("Resend Code Within"+l/1000+"Seconds");
-
             }
 
             @Override
@@ -112,7 +108,7 @@ public class chef_phonverify extends AppCompatActivity {
     {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 number,
-                60L,
+                60,
                 TimeUnit.SECONDS,
                 (Activity) TaskExecutors.MAIN_THREAD,
                 mcallback

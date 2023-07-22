@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pic6"
-    tools:context=".chef_phonverify">
+    tools:context=".chef_phoneverify">
 
     <LinearLayout
         android:id="@+id/linearlayout"
@@ -55,7 +55,7 @@
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
             android:id="@+id/btnresendchefphverify"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:text="Resend Otp"/>
         <TextView
             android:layout_width="match_parent"
