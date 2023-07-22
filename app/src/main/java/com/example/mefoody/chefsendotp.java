@@ -151,6 +151,6 @@ public class chefsendotp extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
             }
-        })
+        });
     }
 }
