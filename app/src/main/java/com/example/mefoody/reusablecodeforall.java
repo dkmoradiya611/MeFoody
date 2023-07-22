@@ -5,14 +5,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 public class reusablecodeforall {
-    public static void ShowAlert(Context context,String titile,String message){
+    public static void ShowAlert(Context context,String title,String message){
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
         builder.setCancelable(false);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
-        }).setTitle(titile).setMessage(message).show();
+        }).setTitle(title).setMessage(message).show();
     }
 }
