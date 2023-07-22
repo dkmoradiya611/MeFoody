@@ -149,7 +149,11 @@ public class chefsendotp extends AppCompatActivity {
         auth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
+                if (task.isSuccessful()){
+                    startActivity(new Intent(chefsendotp.this, cheffoodpanel_bottomnavigation.class));
+                }else{
+                    reusablecodeforall.ShowAlert(chefsendotp.this,"Error",task.getException().getMessage());
+                }
             }
         });
     }
