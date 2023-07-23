@@ -328,7 +328,7 @@ public class Chefregister extends AppCompatActivity {
             houseno.setError("Enter House no");
         }else
         {
-            isValidpincode = true;
+            isValidhouseno = true;
         }
 
         isValid = (isValidname && isValidpincode && isValidlname && isValidemail && isValidconfpassword && isValidpassword && isValidmobilenum && isValidarea && isValidhouseno) ? true : false;
