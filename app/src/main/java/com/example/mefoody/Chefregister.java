@@ -3,6 +3,7 @@ package com.example.mefoody;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -31,7 +32,6 @@ import java.util.HashMap;
 public class Chefregister extends AppCompatActivity {
     String[] Maharashtra = {"Mumbai","Pune","Nashik"};
     String[] Gujarat = {"Surat ","Ahemdabad","Vadodara"};
-
     TextInputLayout Fname,Lname,Email,Pass,cpass,mobileno,houseno,area,pincode;
     Spinner Statespin,Cityspin;
     Button signup,Emaill,Phone;
@@ -42,6 +42,7 @@ public class Chefregister extends AppCompatActivity {
     String fname,lname,emailid,password,confpassword,mobile,house,Area,Pincode,statee,cityy;
     String role="Chef";
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -198,9 +199,27 @@ public class Chefregister extends AppCompatActivity {
 
                                 }
                             });
+                            } else {
+                            mDialog.dismiss();
+                            reusablecodeforall.ShowAlert(Chefregister.this, "Error", task.getException().getMessage());
+                        };
                         }
-                    }
-                });
+                    });
+                };
+
+        });
+        Emaill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Chefregister.this, Chefloginemail.class));
+                finish();
+            }
+        });
+        Phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Chefregister.this, Chefloginphone.class));
+                finish();
             }
         });
 

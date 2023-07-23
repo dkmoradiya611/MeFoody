@@ -8,33 +8,33 @@
     tools:context=".Chefregister">
 
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="368dp"
-        android:layout_height="629dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="280dp"
+        android:layout_height="430dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="60dp"
         android:background="@drawable/background_shape"
         android:orientation="vertical"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtfnamechefreg"
+                android:id="@+id/txtfnamecustreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtfnamechefreg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/name"
@@ -89,8 +89,7 @@
                     android:drawableLeft="@drawable/password"
                     android:drawablePadding="10dp"
                     android:hint="Password"
-                    android:inputType="text|textPassword"
-                    android:maxLength="8" />
+                    android:inputType="text|textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -107,7 +106,6 @@
                     android:drawablePadding="10dp"
                     android:hint="Confirm Password"
                     android:inputType="text|textPassword"
-                    android:maxLength="8"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,7 +118,7 @@
                 <com.hbb20.CountryCodePicker
                     android:id="@+id/ccdchefreg"
                     android:layout_width="120dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/txtmnochefreg"
@@ -132,7 +130,6 @@
                         android:layout_height="wrap_content"
                         android:hint="Mobile Number"
                         android:inputType="phone"
-                        android:maxLength="10"
                         tools:ignore="TouchTargetSizeCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -176,7 +173,6 @@
                     android:layout_height="wrap_content"
                     android:hint="Pincode"
                     android:inputType="number"
-                    android:maxLength="6"
                     tools:ignore="TouchTargetSizeCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -285,11 +281,11 @@
 
                 <Button
                     android:id="@+id/btnphonechefreg"
-                    android:layout_width="95dp"
+                    android:layout_width="97dp"
                     android:layout_height="40dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginLeft="118dp"
-
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btnbluiesh"
                     android:drawableLeft="@drawable/phone"
                     android:padding="8dp"
@@ -299,19 +295,5 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="335dp"
-        android:layout_height="59dp"
-        android:gravity="center"
-        android:text="👨‍🍳 Registration As Chef 👩‍🍳"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

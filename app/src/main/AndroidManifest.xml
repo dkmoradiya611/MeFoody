@@ -25,6 +25,15 @@
             android:name=".Delivery_phonverify"
             android:exported="false" />
         <activity
+            android:name=".Cust_Forgotpassword"
+            android:exported="false" />
+        <activity
+            android:name=".Custfoodpanel_bottomnavigation"
+            android:exported="false" />
+        <activity
+            android:name=".cust_phoneverify"
+            android:exported="false" />
+        <activity
             android:name=".chefsendotp"
             android:exported="false" />
         <activity

@@ -145,7 +145,8 @@
                     android:drawableLeft="@drawable/assress"
                     android:drawablePadding="10dp"
                     android:hint="House/Street no."
-                    android:inputType="text" />
+                    android:inputType="text"
+                    tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
