@@ -24,25 +24,24 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class chefsendotp extends AppCompatActivity {
+public class Delivery_sendotp extends AppCompatActivity {
 
     Button verify, resend;
     TextView txt;
     EditText entercode;
     String verificationid, phoneno;
     FirebaseAuth auth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chefsendotp);
+        setContentView(R.layout.activity_delivery_sendotp);
 
         phoneno = getIntent().getStringExtra("Phonenum").trim();
 
-        entercode = findViewById(R.id.txtotpsendchef);
-        txt = findViewById(R.id.text1);
-        resend = findViewById(R.id.btnresendsendotpchef);
-        verify = findViewById(R.id.btnverifysendotpchef);
+        entercode = findViewById(R.id.txtotpsenddel);
+        txt = findViewById(R.id.text1del);
+        resend = findViewById(R.id.btnresendotpdel);
+        verify=findViewById(R.id.btnverifysendotpdel);
         auth = FirebaseAuth.getInstance();
 
         resend.setVisibility(View.INVISIBLE);
@@ -102,8 +101,8 @@ public class chefsendotp extends AppCompatActivity {
                 }.start();
             }
         });
-    }
 
+    }
     private void resendotp(String phonenum) {
         sendverificationcode(phonenum);
     }
@@ -136,7 +135,7 @@ public class chefsendotp extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(chefsendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(Delivery_sendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 
@@ -150,11 +149,12 @@ public class chefsendotp extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    startActivity(new Intent(chefsendotp.this, cheffoodpanel_bottomnavigation.class));
+                    startActivity(new Intent(Delivery_sendotp.this, DeliveryFoodpanel_BottomNavigation.class));
                 }else{
-                    reusablecodeforall.ShowAlert(chefsendotp.this,"Error",task.getException().getMessage());
+                    reusablecodeforall.ShowAlert(Delivery_sendotp.this,"Error",task.getException().getMessage());
                 }
             }
         });
     }
+
 }

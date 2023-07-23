@@ -39,7 +39,8 @@ public class Chefregister extends AppCompatActivity {
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    String fname,lname,emailid,password,confpassword,mobile,house,Area,Pincode,role="Chef",statee,cityy;
+    String fname,lname,emailid,password,confpassword,mobile,house,Area,Pincode,statee,cityy;
+    String role="Chef";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -202,6 +203,22 @@ public class Chefregister extends AppCompatActivity {
                 });
             }
         });
+
+        Emaill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Chefregister.this,Chefloginemail.class));
+                finish();
+            }
+        });
+
+        Phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Chefregister.this,Chefloginphone.class));
+            }
+        });
+
     }
 
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
