@@ -194,7 +194,6 @@ public class Chefregister extends AppCompatActivity {
 
                                                 }
                                             });
-
                                 }
                             });
                         }
