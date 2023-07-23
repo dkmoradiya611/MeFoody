@@ -194,6 +194,7 @@ public class Chefregister extends AppCompatActivity {
 
                                                 }
                                             });
+
                                 }
                             });
                         }
@@ -226,7 +227,7 @@ public class Chefregister extends AppCompatActivity {
         pincode.setError("");
 
         boolean isValidname=false,isValidemail=false,isValidpassword=false,isValidconfpassword=false,isValid=false,isValidmobilenum=false,isValidlname=false,isValidarea=false,isValidpincode=false,isValidhouseno=false;
-
+        //boolean isValid=false, isValidhouseno=false,isValidlname=false,isValidname=false,isValidemail=false,isValidpassword=false,isValidconfpassword=false,isValidmobilenum=false,isValidarea=false,isValidpincode=false;
         if(TextUtils.isEmpty(fname))
         {
             Fname.setErrorEnabled(true);
@@ -331,6 +332,7 @@ public class Chefregister extends AppCompatActivity {
         }
 
         isValid = (isValidname && isValidpincode && isValidlname && isValidemail && isValidconfpassword && isValidpassword && isValidmobilenum && isValidarea && isValidhouseno) ? true : false;
+        //isValid = (isValidarea && isValidconfpassword && isValidpassword && isValidpincode && isValidemail && isValidmobilenum && isValidname && isValidhouseno && isValidlname)? true : false ;
         return isValid;
     }
 }
