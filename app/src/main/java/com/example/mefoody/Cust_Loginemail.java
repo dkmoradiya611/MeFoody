@@ -48,7 +48,7 @@ public class Cust_Loginemail extends AppCompatActivity {
                         final ProgressDialog mdialog=new ProgressDialog(Cust_Loginemail.this);
                         mdialog.setCanceledOnTouchOutside(false);
                         mdialog.setCancelable(false);
-                        mdialog.setMessage("Sign In Please ...............");
+                        mdialog.setMessage("Sign In Please Wait...............");
                         mdialog.show();
 
                         Fauth.signInWithEmailAndPassword(emailid,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
