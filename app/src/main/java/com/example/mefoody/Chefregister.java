@@ -307,7 +307,7 @@ public class Chefregister extends AppCompatActivity {
         if(TextUtils.isEmpty(Area))
         {
             area.setErrorEnabled(true);
-            area.setError("Area is Required");
+            area.setError("Area is required compalsary");
         }else
         {
             isValidarea = true;
