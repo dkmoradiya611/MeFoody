@@ -26,10 +26,11 @@ import java.util.concurrent.TimeUnit;
 
 public class chefsendotp extends AppCompatActivity {
 
-    Button verify, resend;
+    Button verify,resend;
     TextView txt;
     EditText entercode;
-    String verificationid, phoneno;
+    String verificationid;
+    String phoneno;
     FirebaseAuth auth;
 
     @Override
@@ -37,7 +38,7 @@ public class chefsendotp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chefsendotp);
 
-        phoneno = getIntent().getStringExtra("Phonenum").trim();
+        phoneno = getIntent().getStringExtra("phonenum").trim();
 
         entercode = findViewById(R.id.txtotpsendchef);
         txt = findViewById(R.id.text1);

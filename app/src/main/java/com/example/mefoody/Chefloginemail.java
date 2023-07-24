@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.mefoody.reusablecodeforall;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -63,8 +62,7 @@ public class Chefloginemail extends AppCompatActivity {
                                         Toast.makeText(Chefloginemail.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
                                         Intent z =new Intent(Chefloginemail.this,cheffoodpanel_bottomnavigation.class);
                                         startActivity(z);
-                                    }
-                                    else {
+                                    }else {
                                         reusablecodeforall.ShowAlert(Chefloginemail.this,"Verification failed","You Have Not Verified Your Email");
                                     }
                                 }else {
