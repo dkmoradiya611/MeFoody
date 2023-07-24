@@ -1,5 +1,8 @@
 package com.example.mefoody;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,7 +24,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class chef_phonverify extends AppCompatActivity {
+public class cust_phoneverify extends AppCompatActivity {
     Button verify,resend;
     TextView txt;
     EditText entercode;
@@ -34,21 +34,20 @@ public class chef_phonverify extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chef_phonverify);
+        setContentView(R.layout.activity_cust_phoneverify);
 
-        //phoneno=getIntent().getStringExtra("phonenumber").trim();
+        phoneno=getIntent().getStringExtra("phonenumberr").trim();
+        entercode=(EditText)findViewById(R.id.txtotpchefphverifyy);
 
-        entercode=findViewById(R.id.txtotpchefphverify);
         txt=findViewById(R.id.text);
-        resend=findViewById(R.id.btnresendchefphverify);
-        verify=findViewById(R.id.btnverifychefpvery);
+        resend=findViewById(R.id.btnresendchefphverifyy);
+        verify=findViewById(R.id.btnverifychefpveryy);
         auth=FirebaseAuth.getInstance();
 
         resend.setVisibility(View.INVISIBLE);
         txt.setVisibility(View.INVISIBLE);
 
         sendverificationcode(phoneno);
-
         verify.setOnClickListener(view -> {
             String code=entercode.getText().toString().trim();
             resend.setVisibility(View.INVISIBLE);
@@ -98,6 +97,7 @@ public class chef_phonverify extends AppCompatActivity {
                 }.start();
             }
         });
+
     }
 
     private void resendotp(String phonenum) {
@@ -133,7 +133,7 @@ public class chef_phonverify extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(chef_phonverify.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(cust_phoneverify.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 
@@ -144,14 +144,14 @@ public class chef_phonverify extends AppCompatActivity {
 
     private void linkcredential(PhoneAuthCredential credential) {
         auth.getCurrentUser().linkWithCredential(credential)
-                .addOnCompleteListener(chef_phonverify.this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(cust_phoneverify.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Intent intent=new Intent(chef_phonverify.this, MainMenu.class);
+                            Intent intent=new Intent(cust_phoneverify.this, MainMenu.class);
                             startActivity(intent);
                         }else {
-                            reusablecodeforall.ShowAlert(chef_phonverify.this,"Error",task.getException().getMessage());
+                            reusablecodeforall.ShowAlert(cust_phoneverify.this,"Error",task.getException().getMessage());
                         }
                     }
                 });
