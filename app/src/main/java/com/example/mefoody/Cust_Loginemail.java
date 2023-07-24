@@ -32,7 +32,7 @@ public class Cust_Loginemail extends AppCompatActivity {
             email=findViewById(R.id.txtemailcustloginemail);
             pass=findViewById(R.id.txtpasscustloginemail);
             signin=findViewById(R.id.btnlogincustloginemail);
-            signup=findViewById(R.id.txtpasscustloginemail);
+            signup=findViewById(R.id.crtcustloginemail);
             forgotpassword=findViewById(R.id.forgotpasscustloginemail);
             signinphone=findViewById(R.id.btnphonecustloginemail);
 

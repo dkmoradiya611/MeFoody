@@ -28,7 +28,7 @@ public class Cust_Loginphone extends AppCompatActivity {
         sendotp=findViewById(R.id.btnsendotpcustphone);
         cpp=findViewById(R.id.ccdcustloginphone);
         signinemail=findViewById(R.id.btnemailcustloginphone);
-        signup=findViewById(R.id.acsignup);
+        signup=findViewById(R.id.crtcustloginphone);
 
         Fauth=FirebaseAuth.getInstance();
 
@@ -39,7 +39,7 @@ public class Cust_Loginphone extends AppCompatActivity {
                 String phonenum=cpp.getDefaultCountryCodeWithPlus()+number;
                 Intent b=new Intent(Cust_Loginphone.this,Cust_sendotp.class);
 
-                b.putExtra("Phonenum",phonenum);
+                b.putExtra("Phonenumber",phonenum);
                 startActivity(b);
             }
         });

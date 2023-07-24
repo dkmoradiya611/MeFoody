@@ -36,12 +36,12 @@ public class cust_phoneverify extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cust_phoneverify);
 
-        phoneno=getIntent().getStringExtra("phonenumberr").trim();
-        entercode=(EditText)findViewById(R.id.txtotpchefphverifyy);
+        phoneno=getIntent().getStringExtra("phonenumber").trim();
+        entercode=(EditText)findViewById(R.id.txtotpcustphverify);
 
         txt=findViewById(R.id.text);
-        resend=findViewById(R.id.btnresendchefphverifyy);
-        verify=findViewById(R.id.btnverifychefpveryy);
+        resend=findViewById(R.id.btnresendcustphverify);
+        verify=findViewById(R.id.btnverifycustphverify);
         auth=FirebaseAuth.getInstance();
 
         resend.setVisibility(View.INVISIBLE);
@@ -85,7 +85,7 @@ public class cust_phoneverify extends AppCompatActivity {
                     @Override
                     public void onTick(long l) {
                         txt.setVisibility(View.VISIBLE);
-                        txt.setText("Resend Code Within"+l/1000+"Seconds");
+                        txt.setText("Resend Code Within "+l/1000+" Seconds");
 
                     }
 

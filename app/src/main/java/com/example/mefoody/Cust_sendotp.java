@@ -36,7 +36,7 @@ public class Cust_sendotp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cust_sendotp);
-        phoneno = getIntent().getStringExtra("Phonenumb").trim();
+        phoneno = getIntent().getStringExtra("Phonenumber").trim();
 
         entercode = findViewById(R.id.txtotpsendcust);
         txt = findViewById(R.id.textt);

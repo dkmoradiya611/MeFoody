@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pic6"
     tools:context=".cust_phoneverify">
     <LinearLayout
         android:id="@+id/linearlayout"
@@ -34,7 +35,7 @@
             android:textSize="28dp"
             android:textStyle="bold"
             android:ems="10"
-            android:id="@+id/txtotpchefphverifyy"
+            android:id="@+id/txtotpcustphverify"
             android:layout_marginTop="15dp"/>
         <Button
             android:layout_width="match_parent"
@@ -45,14 +46,14 @@
             android:textSize="30sp"
             android:textStyle="italic"
             android:textColor="@color/white"
-            android:id="@+id/btnverifychefpveryy"/>
+            android:id="@+id/btnverifycustphverify"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/btnred"
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
-            android:id="@+id/btnresendchefphverifyy"
+            android:id="@+id/btnresendcustphverify"
             android:textSize="25sp"
             android:text="Resend Otp"/>
         <TextView

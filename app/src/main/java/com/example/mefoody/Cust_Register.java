@@ -37,7 +37,8 @@ public class Cust_Register extends AppCompatActivity {
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    String fname,lname,emailid,password,confpassword,mobile,Localaddress,Area,Pincode,role="Customer",statee,cityy;
+    String fname,lname,emailid,password,confpassword,mobile,Localaddress,Area,Pincode,statee,cityy;
+    String role="Customer";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +156,7 @@ public class Cust_Register extends AppCompatActivity {
                                         hashMap1.put("Confirm Password", confpassword);
                                         hashMap1.put("Localaddress", Localaddress);
 
-                                        FirebaseDatabase.getInstance().getReference("Chef")
+                                        FirebaseDatabase.getInstance().getReference("Customer")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(hashMap1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
@@ -173,10 +174,10 @@ public class Cust_Register extends AppCompatActivity {
                                                                         @Override
                                                                         public void onClick(DialogInterface dialog, int which) {
                                                                             dialog.dismiss();
-//                                                                            String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
-//                                                                            Intent b=new Intent(Cust_Register.this, cust_phoneverify.class);
-//                                                                            b.putExtra("phonenumberr",phonenumber);
-//                                                                            startActivity(b);
+                                                                            String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
+                                                                            Intent b=new Intent(Cust_Register.this, cust_phoneverify.class);
+                                                                            b.putExtra("phonenumber",phonenumber);
+                                                                            startActivity(b);
                                                                         }
                                                                     });
 

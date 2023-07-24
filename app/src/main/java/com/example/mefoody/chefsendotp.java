@@ -38,7 +38,7 @@ public class chefsendotp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chefsendotp);
 
-        phoneno = getIntent().getStringExtra("phonenum").trim();
+        phoneno = getIntent().getStringExtra("Phonenumber").trim();
 
         entercode = findViewById(R.id.txtotpsendchef);
         txt = findViewById(R.id.text1);
