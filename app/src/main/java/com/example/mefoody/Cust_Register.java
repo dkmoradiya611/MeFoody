@@ -173,10 +173,10 @@ public class Cust_Register extends AppCompatActivity {
                                                                         @Override
                                                                         public void onClick(DialogInterface dialog, int which) {
                                                                             dialog.dismiss();
-                                                                            String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
-                                                                            Intent b=new Intent(Cust_Register.this, cust_phoneverify.class);
-                                                                            b.putExtra("phonenumberr",phonenumber);
-                                                                            startActivity(b);
+//                                                                            String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
+//                                                                            Intent b=new Intent(Cust_Register.this, cust_phoneverify.class);
+//                                                                            b.putExtra("phonenumberr",phonenumber);
+//                                                                            startActivity(b);
                                                                         }
                                                                     });
 
@@ -208,14 +208,12 @@ public class Cust_Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Cust_Register.this, Cust_Loginemail.class));
-                finish();
             }
         });
         Phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Cust_Register.this, Cust_Loginphone.class));
-                finish();
             }
         });
     }

@@ -172,10 +172,10 @@ public class Chefregister extends AppCompatActivity {
                                                                     @Override
                                                                     public void onClick(DialogInterface dialog, int which) {
                                                                         dialog.dismiss();
-//                                                                        String phonenumber = Cpp.getSelectedCountryCodeWithPlus() + mobile;
-//                                                                        Intent b = new Intent(Chefregister.this, chef_phonverify.class);
-//                                                                        b.putExtra("phonenumber", phonenumber);
-//                                                                        startActivity(b);
+                                                                        String phonenumber = Cpp.getSelectedCountryCodeWithPlus() + mobile;
+                                                                        Intent b = new Intent(Chefregister.this, chef_phonverify.class);
+                                                                        b.putExtra("phonenumber", phonenumber);
+                                                                        startActivity(b);
                                                                     }
                                                                 });
 
@@ -190,7 +190,6 @@ public class Chefregister extends AppCompatActivity {
 
                                                 }
                                             });
-
                                 }
                             });
                         }
