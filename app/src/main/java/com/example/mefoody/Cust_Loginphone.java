@@ -36,10 +36,10 @@ public class Cust_Loginphone extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 number=num.getText().toString().trim();
-                String phonenum=cpp.getDefaultCountryCodeWithPlus()+number;
+                String phonenumber=cpp.getDefaultCountryCodeWithPlus()+number;
                 Intent b=new Intent(Cust_Loginphone.this,Cust_sendotp.class);
 
-                b.putExtra("Phonenumber",phonenum);
+                b.putExtra("Phonenumber",phonenumber);
                 startActivity(b);
             }
         });
