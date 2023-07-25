@@ -7,13 +7,28 @@
     android:background="@drawable/pic3"
     tools:context=".Chefregister">
 
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="277dp"
+        android:layout_height="400dp"
+        android:background="@drawable/background_shape"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+
+
     <ScrollView
         android:id="@+id/scrollViewchef"
-        android:layout_width="368dp"
-        android:layout_height="629dp"
+        android:layout_width="276dp"
+        android:layout_height="455dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="55dp"
         android:background="@drawable/background_shape"
         android:orientation="vertical"
         android:padding="15dp"
@@ -204,12 +219,13 @@
                 android:id="@+id/ddlcitychefreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/btnchefreg"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_shape"
                 android:drawablePadding="10dp"
@@ -278,14 +294,15 @@
                     android:drawableLeft="@drawable/email"
                     android:padding="8dp"
                     android:text="Email"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Button
                     android:id="@+id/btnphonechefreg"
-                    android:layout_width="97dp"
+                    android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/btnbluiesh"
                     android:drawableLeft="@drawable/phone"
