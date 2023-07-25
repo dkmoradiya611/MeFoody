@@ -24,7 +24,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class cust_phoneverify extends AppCompatActivity {
+public class  cust_phoneverify extends AppCompatActivity {
     Button verify,resend;
     TextView txt;
     EditText entercode;
