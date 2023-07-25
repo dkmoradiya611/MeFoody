@@ -67,7 +67,7 @@ public class Cust_sendotp extends AppCompatActivity {
             @Override
             public void onTick(long l) {
                 txt.setVisibility(View.VISIBLE);
-                txt.setText("Resend Code Within" + l / 1000 + "Seconds");
+                txt.setText("Resend Code Within " + l / 1000 + " Seconds");
 
             }
 
@@ -89,7 +89,7 @@ public class Cust_sendotp extends AppCompatActivity {
                     @Override
                     public void onTick(long l) {
                         txt.setVisibility(View.VISIBLE);
-                        txt.setText("Resend Code Within" + l / 1000 + " Seconds");
+                        txt.setText("Resend Code Within " + l / 1000 + " Seconds");
 
                     }
 

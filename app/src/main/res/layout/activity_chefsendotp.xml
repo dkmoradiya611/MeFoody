@@ -18,17 +18,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="15dp">
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="209dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="monospace"
+            android:padding="15dp"
             android:text="Enter OTP"
             android:textColor="@color/DarkBlue"
             android:textSize="30sp"
-            android:layout_gravity="center"
-            android:textStyle="italic"
-            android:padding="15dp"
-            android:fontFamily="monospace"
-            />
+            android:textStyle="italic" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="70dp"
