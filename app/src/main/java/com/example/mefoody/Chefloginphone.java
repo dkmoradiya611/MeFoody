@@ -37,10 +37,10 @@ public class Chefloginphone extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 number=num.getText().toString().trim();
-                String phonenum=cpp.getDefaultCountryCodeWithPlus()+number;
+                String Phonenumber=cpp.getDefaultCountryCodeWithPlus()+number;
                 Intent b=new Intent(Chefloginphone.this,chefsendotp.class);
 
-                b.putExtra("Phonenum",phonenum);
+                b.putExtra("Phonenumber",Phonenumber);
                 startActivity(b);
             }
         });

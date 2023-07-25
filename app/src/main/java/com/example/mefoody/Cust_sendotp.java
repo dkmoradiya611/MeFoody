@@ -3,6 +3,7 @@ package com.example.mefoody;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,26 +25,23 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class chefsendotp extends AppCompatActivity {
-
-    Button verify,resend;
+public class Cust_sendotp extends AppCompatActivity {
+    Button verify, resend;
     TextView txt;
     EditText entercode;
-    String verificationid;
-    String phoneno;
+    String verificationid, phoneno;
     FirebaseAuth auth;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chefsendotp);
+        setContentView(R.layout.activity_cust_sendotp);
+        phoneno = getIntent().getStringExtra("Phonenumber").trim();
 
-        phoneno = getIntent().getStringExtra("phonenumber").trim();
-
-        entercode = findViewById(R.id.txtotpsendchef);
-        txt = findViewById(R.id.text1);
-        resend = findViewById(R.id.btnresendsendotpchef);
-        verify = findViewById(R.id.btnverifysendotpchef);
+        entercode = findViewById(R.id.txtotpsendcust);
+        txt = findViewById(R.id.textt);
+        resend = findViewById(R.id.btnresendsendotpcust);
+        verify = findViewById(R.id.btnverifysendotpcust);
         auth = FirebaseAuth.getInstance();
 
         resend.setVisibility(View.INVISIBLE);
@@ -69,7 +67,7 @@ public class chefsendotp extends AppCompatActivity {
             @Override
             public void onTick(long l) {
                 txt.setVisibility(View.VISIBLE);
-                txt.setText("Resend Code Within " + l / 1000 + " Seconds");
+                txt.setText("Resend Code Within" + l / 1000 + "Seconds");
 
             }
 
@@ -137,7 +135,7 @@ public class chefsendotp extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(chefsendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(Cust_sendotp.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 
@@ -151,11 +149,12 @@ public class chefsendotp extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    startActivity(new Intent(chefsendotp.this, cheffoodpanel_bottomnavigation.class));
+                    startActivity(new Intent(Cust_sendotp.this, Custfoodpanel_bottomnavigation.class));
                 }else{
-                    reusablecodeforall.ShowAlert(chefsendotp.this,"Error",task.getException().getMessage());
+                    reusablecodeforall.ShowAlert(Cust_sendotp.this,"Error",task.getException().getMessage());
                 }
             }
         });
     }
+
 }

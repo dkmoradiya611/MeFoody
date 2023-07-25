@@ -1,8 +1,5 @@
 package com.example.mefoody;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -15,7 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.google.android.datatransport.runtime.dagger.Reusable;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -32,7 +31,7 @@ public class Chefregister extends AppCompatActivity {
     String[] Maharashtra = {"Mumbai", "Pune", "Nashik"};
     String[] Gujarat = {"Surat ", "Ahemdabad", "Vadodara"};
 
-    TextInputLayout Fname, Lname, Email, Pass, cpass, mobileno, houseno, area, pincode;
+    TextInputLayout firstname, Lname, Email, Pass, cpass, mobileno, houseno, area, pincode;
     Spinner Statespin, Cityspin;
     Button signup, Emaill, Phone;
     CountryCodePicker Cpp;
@@ -40,13 +39,14 @@ public class Chefregister extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
     String fname, lname, emailid, password, confpassword, mobile, house, Area, Pincode, role = "Chef", statee, cityy;
+    String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chefregister);
 
-        Fname = (TextInputLayout) findViewById(R.id.txtfnamechefreg);
+        firstname = findViewById(R.id.txtfnamechefreg);
         Lname = (TextInputLayout) findViewById(R.id.txtlnamechefreg);
         Email = (TextInputLayout) findViewById(R.id.txtemailchefreg);
         Pass = (TextInputLayout) findViewById(R.id.txtpasschefreg);
@@ -71,17 +71,17 @@ public class Chefregister extends AppCompatActivity {
 
                 Object value = parent.getItemAtPosition(position);
                 statee = value.toString().trim();
-                if (statee.equals("Gujarat")) {
+                if (statee.equals("Maharashtra")) {
                     ArrayList<String> list = new ArrayList<>();
-                    for (String cities : Gujarat) {
+                    for (String cities : Maharashtra) {
                         list.add(cities);
                     }
                     ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Chefregister.this, android.R.layout.simple_spinner_item, list);
                     Cityspin.setAdapter(arrayAdapter);
                 }
-                if (statee.equals("Maharashtra")) {
+                if (statee.equals("Gujarat")) {
                     ArrayList<String> list = new ArrayList<>();
-                    for (String cities : Maharashtra) {
+                    for (String cities : Gujarat) {
                         list.add(cities);
                     }
                     ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Chefregister.this, android.R.layout.simple_spinner_item, list);
@@ -110,11 +110,9 @@ public class Chefregister extends AppCompatActivity {
         databaseReference = firebaseDatabase.getInstance().getReference("Chef");
         FAuth = FirebaseAuth.getInstance();
 
-
-
         signup.setOnClickListener(view -> {
 
-            fname = Fname.getEditText().getText().toString().trim();
+            fname = firstname.getEditText().getText().toString().trim();
             lname = Lname.getEditText().getText().toString().trim();
             emailid = Email.getEditText().getText().toString().trim();
             mobile = mobileno.getEditText().getText().toString().trim();
@@ -195,20 +193,33 @@ public class Chefregister extends AppCompatActivity {
 
                                 }
                             });
+                        } else {
+                            mDialog.dismiss();
+                            reusablecodeforall.ShowAlert(Chefregister.this, "Error", task.getException().getMessage());
                         }
                     }
                 });
             }
         });
+        Email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Chefregister.this, Chefloginemail.class));
+            }
+        });
+        Phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Chefregister.this, Chefloginphone.class));
+            }
+        });
     }
-
-    String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     public boolean isValid() {
         Email.setErrorEnabled(false);
         Email.setError("");
-        Fname.setErrorEnabled(false);
-        Fname.setError("");
+        firstname.setErrorEnabled(false);
+        firstname.setError("");
         Lname.setErrorEnabled(false);
         Lname.setError("");
         Pass.setErrorEnabled(false);
@@ -227,8 +238,8 @@ public class Chefregister extends AppCompatActivity {
         boolean isValidname = false, isValidemail = false, isValidpassword = false, isValidconfpassword = false, isValid = false, isValidmobilenum = false, isValidlname = false, isValidarea = false, isValidpincode = false, isValidhouseno = false;
         //boolean isValid=false, isValidhouseno=false,isValidlname=false,isValidname=false,isValidemail=false,isValidpassword=false,isValidconfpassword=false,isValidmobilenum=false,isValidarea=false,isValidpincode=false;
         if (TextUtils.isEmpty(fname)) {
-            Fname.setErrorEnabled(true);
-            Fname.setError("Enter First Name");
+            firstname.setErrorEnabled(true);
+            firstname.setError("Enter First Name");
         } else {
             isValidname = true;
         }
@@ -288,7 +299,7 @@ public class Chefregister extends AppCompatActivity {
 
         if (TextUtils.isEmpty(Area)) {
             area.setErrorEnabled(true);
-            area.setError("Area is required compalsary");
+            area.setError("Area is Required");
         } else {
             isValidarea = true;
         }
