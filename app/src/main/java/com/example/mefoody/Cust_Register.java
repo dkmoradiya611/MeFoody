@@ -44,7 +44,7 @@ public class Cust_Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cust_register);
-        Fname = (TextInputLayout)findViewById(R.id.txtfnamechefreg);
+        Fname = (TextInputLayout)findViewById(R.id.txtfnamecustreg);
         Lname = (TextInputLayout)findViewById(R.id.txtlnamecustreg);
         Email = (TextInputLayout)findViewById(R.id.txtemailcustreg);
         Pass = (TextInputLayout)findViewById(R.id.txtpasscustreg);
