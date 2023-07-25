@@ -31,7 +31,7 @@ public class Chefregister extends AppCompatActivity {
     String[] Maharashtra = {"Mumbai", "Pune", "Nashik"};
     String[] Gujarat = {"Surat ", "Ahemdabad", "Vadodara"};
 
-    TextInputLayout Fname, Lname, Email, Pass, cpass, mobileno, houseno, area, pincode;
+    TextInputLayout firstname, Lname, Email, Pass, cpass, mobileno, houseno, area, pincode;
     Spinner Statespin, Cityspin;
     Button signup, Emaill, Phone;
     CountryCodePicker Cpp;
@@ -46,7 +46,7 @@ public class Chefregister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chefregister);
 
-        Fname = (TextInputLayout) findViewById(R.id.txtfnamechefreg);
+        firstname = findViewById(R.id.txtfnamechefreg);
         Lname = (TextInputLayout) findViewById(R.id.txtlnamechefreg);
         Email = (TextInputLayout) findViewById(R.id.txtemailchefreg);
         Pass = (TextInputLayout) findViewById(R.id.txtpasschefreg);
@@ -112,7 +112,7 @@ public class Chefregister extends AppCompatActivity {
 
         signup.setOnClickListener(view -> {
 
-            fname = Fname.getEditText().getText().toString().trim();
+            fname = firstname.getEditText().getText().toString().trim();
             lname = Lname.getEditText().getText().toString().trim();
             emailid = Email.getEditText().getText().toString().trim();
             mobile = mobileno.getEditText().getText().toString().trim();
@@ -218,8 +218,8 @@ public class Chefregister extends AppCompatActivity {
     public boolean isValid() {
         Email.setErrorEnabled(false);
         Email.setError("");
-        Fname.setErrorEnabled(false);
-        Fname.setError("");
+        firstname.setErrorEnabled(false);
+        firstname.setError("");
         Lname.setErrorEnabled(false);
         Lname.setError("");
         Pass.setErrorEnabled(false);
@@ -238,8 +238,8 @@ public class Chefregister extends AppCompatActivity {
         boolean isValidname = false, isValidemail = false, isValidpassword = false, isValidconfpassword = false, isValid = false, isValidmobilenum = false, isValidlname = false, isValidarea = false, isValidpincode = false, isValidhouseno = false;
         //boolean isValid=false, isValidhouseno=false,isValidlname=false,isValidname=false,isValidemail=false,isValidpassword=false,isValidconfpassword=false,isValidmobilenum=false,isValidarea=false,isValidpincode=false;
         if (TextUtils.isEmpty(fname)) {
-            Fname.setErrorEnabled(true);
-            Fname.setError("Enter First Name");
+            firstname.setErrorEnabled(true);
+            firstname.setError("Enter First Name");
         } else {
             isValidname = true;
         }
