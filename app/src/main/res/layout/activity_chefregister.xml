@@ -301,7 +301,7 @@
         android:layout_width="335dp"
         android:layout_height="59dp"
         android:gravity="center"
-        android:text="👨‍🍳 Registration As Customer 👩‍🍳"
+        android:text="👨‍🍳 Registration As Chef 👩‍🍳"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
         android:textStyle="bold"
