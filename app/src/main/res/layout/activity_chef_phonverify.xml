@@ -65,7 +65,7 @@
             android:textSize="28dp"
             android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:id="@+id/text"/>
+            android:id="@+id/textchef"/>
 
 
 
