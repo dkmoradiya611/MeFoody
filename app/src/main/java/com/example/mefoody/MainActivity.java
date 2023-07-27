@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(a);
                                 }
                                 if (role.equals("Customer")) {
-                                    Intent a = new Intent(MainActivity.this, customerfoodpanel_bottomnavigation.class);
+                                    Intent a = new Intent(MainActivity.this, Custfoodpanel_bottomnavigation.class);
                                     startActivity(a);
                                 }
 

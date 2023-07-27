@@ -1,9 +1,5 @@
 package com.example.mefoody;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -13,9 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,7 +35,7 @@ public class  cust_phoneverify extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cust_phoneverify);
 
-        phoneno=getIntent().getStringExtra("Phonenumber").trim();
+        phoneno=getIntent().getStringExtra("phonenumber").trim();
         entercode=(EditText)findViewById(R.id.txtotpcustphverify);
 
         txt=findViewById(R.id.text);

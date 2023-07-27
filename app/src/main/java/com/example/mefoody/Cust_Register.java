@@ -176,7 +176,7 @@ public class Cust_Register extends AppCompatActivity {
                                                                             dialog.dismiss();
                                                                             String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
                                                                             Intent b=new Intent(Cust_Register.this, cust_phoneverify.class);
-                                                                            b.putExtra("Phonenumber",phonenumber);
+                                                                            b.putExtra("phonenumber",phonenumber);
                                                                             startActivity(b);
                                                                         }
                                                                     });

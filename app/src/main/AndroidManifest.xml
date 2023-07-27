@@ -17,9 +17,6 @@
             android:name=".delivery_foodpanelbottomnavigation"
             android:exported="false" />
         <activity
-            android:name=".customerfoodpanel_bottomnavigation"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
