@@ -40,7 +40,12 @@ public class chef_phonverify extends AppCompatActivity {
         phoneno=getIntent().getStringExtra("phonenumber").trim();
 
         entercode=findViewById(R.id.txtotpchefphverify);
-        txt=findViewById(R.id.text);
+
+        // here, i changed the id of txt because id was same at two places...
+        // text (old id) to textchef (new id)
+        txt=findViewById(R.id.textchef);
+
+
         resend=findViewById(R.id.btnresendchefphverify);
         verify=findViewById(R.id.btnverifychefpvery);
         auth=FirebaseAuth.getInstance();
@@ -66,7 +71,7 @@ public class chef_phonverify extends AppCompatActivity {
             @Override
             public void onTick(long l) {
                 txt.setVisibility(View.VISIBLE);
-                txt.setText("Resend Code Within"+l/1000+"Seconds");
+                txt.setText("Resend Code Within "+l/1000+" Seconds");
             }
 
             @Override
@@ -87,7 +92,7 @@ public class chef_phonverify extends AppCompatActivity {
                     @Override
                     public void onTick(long l) {
                         txt.setVisibility(View.VISIBLE);
-                        txt.setText("Resend Code Within"+l/1000+"Seconds");
+                        txt.setText("Resend Code Within "+l/1000+" Seconds");
 
                     }
 

@@ -308,7 +308,12 @@ public class Chefregister extends AppCompatActivity {
             pincode.setErrorEnabled(true);
             pincode.setError("Please enter pincode");
         } else {
-            isValidpincode = true;
+            if (Pincode.length() < 6) {
+                pincode.setErrorEnabled(true);
+                pincode.setError("Invalid Pincode");
+            } else {
+                isValidpincode = true;
+            }
         }
 
         if (TextUtils.isEmpty(house)) {
