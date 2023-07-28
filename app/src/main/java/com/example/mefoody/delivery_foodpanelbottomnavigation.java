@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,7 +20,7 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_foodpanelbottomnavigation);
-        BottomNavigationView navigationView = findViewById(R.id.delivery_bottom_navigation);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) BottomNavigationView navigationView = findViewById(R.id.delivery_bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
     }
 
@@ -28,7 +29,16 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
 
         Fragment fragment = null;
 
-        switch (item.getItemId()) {
+        if(item.getItemId()==R.id.shiporders)
+        {
+            fragment = new DeliveryShipOrderFragment();
+        }
+        if(item.getItemId()==R.id.pendingorders)
+        {
+            fragment = new DeliveryPendingOrderFragment();
+        }
+
+        /*switch (item.getItemId()) {
             case R.id.shiporders:
                 fragment = new DeliveryShipOrderFragment();
                 break;
@@ -39,7 +49,7 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
                 break;
             default:
                 break;
-        }
+        }*/
 
         return loaddeliveryfragment(fragment);
 

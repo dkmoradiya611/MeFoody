@@ -27,7 +27,28 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
 
-        switch (item.getItemId()) {
+        if(item.getItemId()==R.id.cust_Home)
+        {
+            fragment = new CustomerHomeFragment();
+        }
+        if(item.getItemId()==R.id.cart)
+        {
+            fragment = new CustomerCartFragment();
+        }
+        if(item.getItemId()==R.id.cust_profile)
+        {
+            fragment = new CustomerProfileFragment();
+        }
+        if(item.getItemId()==R.id.cust_Order)
+        {
+            fragment = new CustomerOrdersFragment();
+        }
+        if(item.getItemId()==R.id.cust_Home)
+        {
+            fragment = new CustomerHomeFragment();
+        }
+
+        /*switch (item.getItemId()) {
             case R.id.cust_Home:
                 fragment = new CustomerHomeFragment();
                 break;
@@ -51,7 +72,7 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
             case R.id.cust_Home:
                 fragment = new CustomerHomeFragment();
                 break;
-        }
+        }*/
         return loadcheffragment(fragment);
     }
 
