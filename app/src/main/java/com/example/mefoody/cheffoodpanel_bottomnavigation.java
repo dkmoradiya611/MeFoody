@@ -1,12 +1,11 @@
 package com.example.mefoody;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.example.mefoody.cheffoodpanel.chefhomefragment;
 import com.example.mefoody.cheffoodpanel.cheforderfragment;
@@ -22,22 +21,6 @@ public class cheffoodpanel_bottomnavigation extends AppCompatActivity implements
         setContentView(R.layout.activity_cheffoodpanel_bottomnavigation);
         BottomNavigationView navigationView=findViewById(R.id.chef_bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
-        String name=getIntent().getStringExtra("PAGE");
-        if (name!=null){
-            if (name != null) {
-                if (name.equalsIgnoreCase("Orderpage")) {
-                    loadcheffragment(new chefpendingorderfragment());
-                } else if (name.equalsIgnoreCase("Confirmpage")) {
-                    loadcheffragment(new cheforderfragment());
-                } else if (name.equalsIgnoreCase("AcceptOrderpage")) {
-                    loadcheffragment(new cheforderfragment());
-                } else if (name.equalsIgnoreCase("Deliveredpage")) {
-                    loadcheffragment(new cheforderfragment());
-                }
-            } else {
-                loadcheffragment(new chefhomefragment());
-            }
-        }
     }
 
     @SuppressLint("NonConstantResourceId")

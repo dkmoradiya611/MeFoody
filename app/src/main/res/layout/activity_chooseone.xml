@@ -38,10 +38,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="#FF5722"
+            android:background="@drawable/btnchooseone"
             android:text="CONNECT AS CHEF"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/customer"
@@ -49,10 +50,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="#FF5722"
+            android:background="@drawable/btnchooseone"
             android:text="CONNECT AS CUSTOMER"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/delivery"
@@ -60,9 +62,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="#FF5722"
+            android:background="@drawable/btnchooseone"
             android:text="CONNECT AS DELIVERY PERSON"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="TextContrastCheck" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

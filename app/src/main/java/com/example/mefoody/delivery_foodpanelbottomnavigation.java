@@ -41,7 +41,7 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
         {
             fragment = new DeliveryShipOrderFragment();
         }
-        if(item.getItemId()==R.id.pendingorders)
+        else if(item.getItemId()==R.id.pendingorders)
         {
             fragment = new DeliveryPendingOrderFragment();
         }

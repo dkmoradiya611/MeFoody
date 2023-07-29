@@ -43,25 +43,27 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
 
+
+
         if(item.getItemId()==R.id.cust_Home)
         {
             fragment = new CustomerHomeFragment();
         }
-        if(item.getItemId()==R.id.cart)
+        else if(item.getItemId()==R.id.cart)
         {
             fragment = new CustomerCartFragment();
         }
-        if(item.getItemId()==R.id.cust_profile)
+        else if(item.getItemId()==R.id.cust_profile)
         {
             fragment = new CustomerProfileFragment();
         }
-        if(item.getItemId()==R.id.cust_Order)
+        else if(item.getItemId()==R.id.cust_Order)
         {
             fragment = new CustomerOrdersFragment();
         }
-        if(item.getItemId()==R.id.cust_Home)
+        else if(item.getItemId()==R.id.track)
         {
-            fragment = new CustomerHomeFragment();
+            fragment = new CustomerTrackFragment();
         }
 
         /*switch (item.getItemId()) {

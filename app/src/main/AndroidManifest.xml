@@ -27,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".cheffoodpanel_bottomnavigation"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".chef_phonverify"
             android:exported="false" />
@@ -46,6 +46,9 @@
         <activity
             android:name=".Cust_Loginphone"
             android:exported="false" />
+        <activity
+            android:name=".Custfoodpanel_bottomnavigation"
+            android:exported="true" />
         <activity
             android:name=".Cust_Loginemail"
             android:exported="false" />
