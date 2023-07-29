@@ -69,7 +69,7 @@ public class cheffoodpanel_bottomnavigation extends AppCompatActivity implements
 
         if(fragment!=null)
         {
-            getSupportFragmentManager().beginTransaction().replace(com.hbb20.R.id.fragment_container_view_tag,fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,fragment).commit();
             return true;
         }
         return false;
