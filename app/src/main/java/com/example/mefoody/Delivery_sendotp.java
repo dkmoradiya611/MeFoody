@@ -47,19 +47,16 @@ public class Delivery_sendotp extends AppCompatActivity {
         txt.setVisibility(View.INVISIBLE);
 
         sendverificationcode(phoneno);
-        verify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String code = entercode.getText().toString().trim();
-                resend.setVisibility(View.INVISIBLE);
+        verify.setOnClickListener(view -> {
+            String code = entercode.getText().toString().trim();
+            resend.setVisibility(View.INVISIBLE);
 
-                if (code.isEmpty() && code.length() < 6) {
-                    entercode.setError("Enter Code");
-                    entercode.requestFocus();
-                    return;
-                }
-                verifycode(code);
+            if (code.isEmpty() && code.length() < 6) {
+                entercode.setError("Enter Code");
+                entercode.requestFocus();
+                return;
             }
+            verifycode(code);
         });
         new CountDownTimer(60000, 1000) {
 
