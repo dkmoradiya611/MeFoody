@@ -62,7 +62,7 @@ public class Delivery_Loginemail extends AppCompatActivity {
                                     if (Fauth.getCurrentUser().isEmailVerified()){
                                         mdialog.dismiss();
                                         Toast.makeText(Delivery_Loginemail.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
-                                        Intent z =new Intent(Delivery_Loginemail.this,DeliveryFoodpanel_BottomNavigation.class);
+                                        Intent z =new Intent(Delivery_Loginemail.this,delivery_foodpanelbottomnavigation.class);
                                         startActivity(z);
                                     }
                                     else {

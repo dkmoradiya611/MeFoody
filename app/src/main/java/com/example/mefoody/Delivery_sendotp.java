@@ -149,7 +149,7 @@ public class Delivery_sendotp extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    startActivity(new Intent(Delivery_sendotp.this, DeliveryFoodpanel_BottomNavigation.class));
+                    startActivity(new Intent(Delivery_sendotp.this, delivery_foodpanelbottomnavigation.class));
                 }else{
                     reusablecodeforall.ShowAlert(Delivery_sendotp.this,"Error",task.getException().getMessage());
                 }

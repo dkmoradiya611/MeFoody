@@ -19,7 +19,7 @@ public class cheffoodpanel_bottomnavigation extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheffoodpanel_bottomnavigation);
-        BottomNavigationView navigationView=findViewById(R.id.chef_bottom_navigation);
+        BottomNavigationView navigationView=findViewById(R.id.chef_bottom_navigation1);
         navigationView.setOnNavigationItemSelectedListener(this);
     }
 
