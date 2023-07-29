@@ -1,13 +1,13 @@
 package com.example.mefoody;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.hbb20.CountryCodePicker;
@@ -39,7 +39,6 @@ public class Chefloginphone extends AppCompatActivity {
                 number=num.getText().toString().trim();
                 String phonenumber=cpp.getDefaultCountryCodeWithPlus()+number;
                 Intent b=new Intent(Chefloginphone.this,chefsendotp.class);
-
                 b.putExtra("phonenumber",phonenumber);
                 startActivity(b);
             }

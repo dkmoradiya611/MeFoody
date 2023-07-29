@@ -80,6 +80,18 @@
             android:name=".MainMenu"
             android:exported="false" />
         <activity
+            android:name=".Cust_sendotp"
+            android:exported="false" />
+        <activity
+            android:name=".cust_phoneverify"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_phonverify"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_sendotp"
+            android:exported="false" />
+        <activity
             android:name=".splash"
             android:exported="true">
 
