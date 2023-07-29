@@ -39,7 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".cheffoodpanel_bottomnavigation"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".chef_phonverify"
             android:exported="false" />
