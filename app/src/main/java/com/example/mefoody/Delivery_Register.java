@@ -28,33 +28,34 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Delivery_Register extends AppCompatActivity {
-    String[] Maharashtra = {"Mumbai","Pune","Nashik"};
-    String[] Gujarat = {"Surat ","Ahemdabad","Vadodara"};
+    String[] Maharashtra = {"Mumbai", "Pune", "Nashik"};
+    String[] Gujarat = {"Surat ", "Ahemdabad", "Vadodara"};
 
-    TextInputLayout Fname,Lname,Email,Pass,cpass,mobileno,houseno,area,pincode;
-    Spinner Statespin,Cityspin;
-    Button signup,Emaill,Phone;
+    TextInputLayout Fname, Lname, Email, Pass, cpass, mobileno, houseno, area, pincode;
+    Spinner Statespin, Cityspin;
+    Button signup, Emaill, Phone;
     CountryCodePicker Cpp;
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    String fname,lname,emailid,password,confpassword,mobile,house,Area,Pincode,statee,cityy;
-    String role="DeliveryPerson";
+    String fname, lname, emailid, password, confpassword, mobile, house, Area, Pincode, statee, cityy;
+    String role = "DeliveryPerson";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_register);
 
-        Fname = (TextInputLayout)findViewById(R.id.txtfnamedelreg);
-        Lname = (TextInputLayout)findViewById(R.id.txtlnamedelreg);
-        Email = (TextInputLayout)findViewById(R.id.txtemaildelreg);
-        Pass = (TextInputLayout)findViewById(R.id.txtpassdelreg);
-        cpass = (TextInputLayout)findViewById(R.id.txtcpassdelreg);
-        mobileno = (TextInputLayout)findViewById(R.id.txtmnodelreg);
-        houseno = (TextInputLayout)findViewById(R.id.txthnodelreg);
-        pincode = (TextInputLayout)findViewById(R.id.txtpcodedelreg);
+        Fname = (TextInputLayout) findViewById(R.id.txtfnamedelreg);
+        Lname = (TextInputLayout) findViewById(R.id.txtlnamedelreg);
+        Email = (TextInputLayout) findViewById(R.id.txtemaildelreg);
+        Pass = (TextInputLayout) findViewById(R.id.txtpassdelreg);
+        cpass = (TextInputLayout) findViewById(R.id.txtcpassdelreg);
+        mobileno = (TextInputLayout) findViewById(R.id.txtmnodelreg);
+        houseno = (TextInputLayout) findViewById(R.id.txthnodelreg);
+        pincode = (TextInputLayout) findViewById(R.id.txtpcodedelreg);
         Statespin = (Spinner) findViewById(R.id.ddlstatedelreg);
-        area = (TextInputLayout)findViewById(R.id.txtareadelreg);
+        area = (TextInputLayout) findViewById(R.id.txtareadelreg);
         Cityspin = (Spinner) findViewById(R.id.ddlcitydelreg);
 
 
@@ -70,24 +71,20 @@ public class Delivery_Register extends AppCompatActivity {
 
                 Object value = parent.getItemAtPosition(position);
                 statee = value.toString().trim();
-                if(statee.equals("Maharashtra"))
-                {
+                if (statee.equals("Maharashtra")) {
                     ArrayList<String> list = new ArrayList<>();
-                    for(String cities : Maharashtra)
-                    {
+                    for (String cities : Maharashtra) {
                         list.add(cities);
                     }
-                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Delivery_Register.this, android.R.layout.simple_spinner_item,list);
+                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Delivery_Register.this, android.R.layout.simple_spinner_item, list);
                     Cityspin.setAdapter(arrayAdapter);
                 }
-                if(statee.equals("Gujarat"))
-                {
+                if (statee.equals("Gujarat")) {
                     ArrayList<String> list = new ArrayList<>();
-                    for(String cities : Gujarat)
-                    {
+                    for (String cities : Gujarat) {
                         list.add(cities);
                     }
-                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Delivery_Register.this, android.R.layout.simple_spinner_item,list);
+                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Delivery_Register.this, android.R.layout.simple_spinner_item, list);
                     Cityspin.setAdapter(arrayAdapter);
                 }
             }
@@ -175,9 +172,9 @@ public class Delivery_Register extends AppCompatActivity {
                                                                         @Override
                                                                         public void onClick(DialogInterface dialog, int which) {
                                                                             dialog.dismiss();
-                                                                            String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
-                                                                            Intent b=new Intent(Delivery_Register.this, Delivery_phonverify.class);
-                                                                            b.putExtra("phonenumber",phonenumber);
+                                                                            String phonenumber = Cpp.getSelectedCountryCodeWithPlus() + mobile;
+                                                                            Intent b = new Intent(Delivery_Register.this, Delivery_phonverify.class);
+                                                                            b.putExtra("phonenumber", phonenumber);
                                                                             startActivity(b);
                                                                         }
                                                                     });
@@ -207,7 +204,7 @@ public class Delivery_Register extends AppCompatActivity {
         Emaill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Delivery_Register.this,Delivery_Loginemail.class));
+                startActivity(new Intent(Delivery_Register.this, Delivery_Loginemail.class));
                 finish();
             }
         });
@@ -215,14 +212,15 @@ public class Delivery_Register extends AppCompatActivity {
         Phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Delivery_Register.this,Delivery_Loginphone.class));
+                startActivity(new Intent(Delivery_Register.this, Delivery_Loginphone.class));
             }
         });
 
     }
+
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    public boolean isValid()
-    {
+
+    public boolean isValid() {
         Email.setErrorEnabled(false);
         Email.setError("");
         Fname.setErrorEnabled(false);
@@ -242,114 +240,91 @@ public class Delivery_Register extends AppCompatActivity {
         pincode.setErrorEnabled(false);
         pincode.setError("");
 
-        boolean isValidname=false,isValidemail=false,isValidpassword=false,isValidconfpassword=false,isValid=false,isValidmobilenum=false,isValidlname=false,isValidarea=false,isValidpincode=false,isValidhouseno=false;
+        boolean isValidname = false, isValidemail = false, isValidpassword = false, isValidconfpassword = false, isValid = false, isValidmobilenum = false, isValidlname = false, isValidarea = false, isValidpincode = false, isValidhouseno = false;
         //boolean isValid=false, isValidhouseno=false,isValidlname=false,isValidname=false,isValidemail=false,isValidpassword=false,isValidconfpassword=false,isValidmobilenum=false,isValidarea=false,isValidpincode=false;
-        if(TextUtils.isEmpty(fname))
-        {
+        if (TextUtils.isEmpty(fname)) {
             Fname.setErrorEnabled(true);
             Fname.setError("Enter First Name");
-        }else
-        {
+        } else {
             isValidname = true;
         }
-        if(TextUtils.isEmpty(lname))
-        {
+        if (TextUtils.isEmpty(lname)) {
             Lname.setErrorEnabled(true);
             Lname.setError("Enter Last Name");
-        }else
-        {
+        } else {
             isValidlname = true;
         }
-        if(TextUtils.isEmpty(emailid))
-        {
+        if (TextUtils.isEmpty(emailid)) {
             Email.setErrorEnabled(true);
             Email.setError("Email is Required");
-        }else
-        {
-            if(emailid.matches(emailpattern))
-            {
+        } else {
+            if (emailid.matches(emailpattern)) {
                 isValidemail = true;
-            }else {
+            } else {
                 Email.setErrorEnabled(true);
                 Email.setError("Enter a valid Email id");
             }
         }
 
-        if(TextUtils.isEmpty(password))
-        {
+        if (TextUtils.isEmpty(password)) {
             Pass.setErrorEnabled(true);
             Pass.setError("Enter Password");
-        }else
-        {
-            if(password.length() < 8)
-            {
+        } else {
+            if (password.length() < 8) {
                 Pass.setErrorEnabled(true);
                 Pass.setError("Password is weak");
-            }else {
+            } else {
                 isValidpassword = true;
             }
         }
 
-        if(TextUtils.isEmpty(confpassword))
-        {
+        if (TextUtils.isEmpty(confpassword)) {
             cpass.setErrorEnabled(true);
             cpass.setError("Enter password again");
-        }else
-        {
-            if(!password.equals(confpassword))
-            {
+        } else {
+            if (!password.equals(confpassword)) {
                 cpass.setErrorEnabled(true);
                 cpass.setError("Password doesn't match");
-            }else {
+            } else {
                 isValidconfpassword = true;
             }
         }
 
-        if(TextUtils.isEmpty(mobile))
-        {
+        if (TextUtils.isEmpty(mobile)) {
             mobileno.setErrorEnabled(true);
             mobileno.setError("Mobile no is Required");
-        }else
-        {
-            if(mobile.length() < 10)
-            {
+        } else {
+            if (mobile.length() < 10) {
                 mobileno.setErrorEnabled(true);
                 mobileno.setError("Invalid Mobile number");
-            }else {
+            } else {
                 isValidmobilenum = true;
             }
         }
 
-        if(TextUtils.isEmpty(Area))
-        {
+        if (TextUtils.isEmpty(Area)) {
             area.setErrorEnabled(true);
             area.setError("Area is Required");
-        }else
-        {
+        } else {
             isValidarea = true;
         }
 
-        if(TextUtils.isEmpty(Pincode))
-        {
+        if (TextUtils.isEmpty(Pincode)) {
             pincode.setErrorEnabled(true);
             pincode.setError("Please enter pincode");
-        }else
-        {
-            if(Pincode.length() < 6)
-            {
+        } else {
+            if (Pincode.length() < 6) {
                 pincode.setErrorEnabled(true);
                 pincode.setError("Invalid Pincode");
-            }else {
+            } else {
                 isValidpincode = true;
             }
         }
 
-        if(TextUtils.isEmpty(house))
-        {
+        if (TextUtils.isEmpty(house)) {
             houseno.setErrorEnabled(true);
             houseno.setError("Enter House no");
-        }else
-        {
+        } else {
             isValidhouseno = true;
         }
 

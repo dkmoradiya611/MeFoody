@@ -37,10 +37,9 @@ public class Delivery_Loginphone extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 number=num.getText().toString().trim();
-                String phonenum=cpp.getDefaultCountryCodeWithPlus()+number;
+                String phonenumber=cpp.getDefaultCountryCodeWithPlus()+number;
                 Intent b=new Intent(Delivery_Loginphone.this,Delivery_sendotp.class);
-
-                b.putExtra("Phonenum",phonenum);
+                b.putExtra("phonenumber",phonenumber);
                 startActivity(b);
             }
         });
