@@ -11,6 +11,7 @@ import com.example.mefoody.customerFoodPanel.CustomerCartFragment;
 import com.example.mefoody.customerFoodPanel.CustomerHomeFragment;
 import com.example.mefoody.customerFoodPanel.CustomerOrdersFragment;
 import com.example.mefoody.customerFoodPanel.CustomerProfileFragment;
+import com.example.mefoody.customerFoodPanel.CustomerTrackFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -27,25 +28,27 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
 
+
+
         if(item.getItemId()==R.id.cust_Home)
         {
             fragment = new CustomerHomeFragment();
         }
-        if(item.getItemId()==R.id.cart)
+        else if(item.getItemId()==R.id.cart)
         {
             fragment = new CustomerCartFragment();
         }
-        if(item.getItemId()==R.id.cust_profile)
+        else if(item.getItemId()==R.id.cust_profile)
         {
             fragment = new CustomerProfileFragment();
         }
-        if(item.getItemId()==R.id.cust_Order)
+        else if(item.getItemId()==R.id.cust_Order)
         {
             fragment = new CustomerOrdersFragment();
         }
-        if(item.getItemId()==R.id.cust_Home)
+        else if(item.getItemId()==R.id.track)
         {
-            fragment = new CustomerHomeFragment();
+            fragment = new CustomerTrackFragment();
         }
 
         /*switch (item.getItemId()) {

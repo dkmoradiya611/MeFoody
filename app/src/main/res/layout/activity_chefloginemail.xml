@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/linearlayout"
         android:layout_width="275dp"
-        android:layout_height="415dp"
+        android:layout_height="430dp"
         android:background="@drawable/background_shape"
         android:orientation="vertical"
         android:padding="10dp"
@@ -18,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498">
+        app:layout_constraintVertical_bias="0.498"
+        tools:ignore="ExtraText">z
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtemailchefloginemail"
@@ -55,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
+                android:layout_marginTop="20dp"
                 android:text="Forgot Password?"
                 android:textColor="#090909"
                 android:textSize="16dp" />

@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/chefhome"
         android:icon="@drawable/home"
-        android:title="Home"
-        tools:ignore="HardcodedText" />
+        android:title="Home" />
     <item
         android:id="@+id/pendingorder"
         android:icon="@drawable/pending_order"
-        android:title="Pending Orders"
-        tools:ignore="HardcodedText" />
+        android:title="Pending Orders" />
     <item
         android:id="@+id/orders"
         android:icon="@drawable/orders"
-        android:title="Orders"
-        tools:ignore="HardcodedText" />
+        android:title="Orders" />
     <item
         android:id="@+id/chefprofile"
         android:icon="@drawable/post_dish_menu"
-        android:title="Post Dish"
-        tools:ignore="HardcodedText" />
+        android:title="Post Dish" />
 </menu>
