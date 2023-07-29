@@ -39,7 +39,7 @@ public class Cust_Loginphone extends AppCompatActivity {
                 String phonenumber=cpp.getDefaultCountryCodeWithPlus()+number;
                 Intent b=new Intent(Cust_Loginphone.this,Cust_sendotp.class);
 
-                b.putExtra("Phonenumber",phonenumber);
+                b.putExtra("phonenumberr",phonenumber);
                 startActivity(b);
             }
         });
