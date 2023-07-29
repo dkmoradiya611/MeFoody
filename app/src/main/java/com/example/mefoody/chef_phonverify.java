@@ -47,7 +47,7 @@ public class chef_phonverify extends AppCompatActivity {
 
 
         resend=findViewById(R.id.btnresendchefphverify);
-        verify=findViewById(R.id.btnverifychefpvery);
+        verify=findViewById(R.id.btnverifychefphverify);
         auth=FirebaseAuth.getInstance();
 
         resend.setVisibility(View.INVISIBLE);

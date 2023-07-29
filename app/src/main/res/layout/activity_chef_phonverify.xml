@@ -47,7 +47,7 @@
             android:textSize="30sp"
             android:textStyle="italic"
             android:textColor="@color/white"
-            android:id="@+id/btnverifychefpvery"/>
+            android:id="@+id/btnverifychefphverify"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"

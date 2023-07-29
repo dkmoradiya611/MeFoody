@@ -175,12 +175,11 @@ public class Cust_Register extends AppCompatActivity {
                                                                         public void onClick(DialogInterface dialog, int which) {
                                                                             dialog.dismiss();
                                                                             String phonenumber=Cpp.getSelectedCountryCodeWithPlus()+mobile;
-                                                                            Intent b=new Intent(Cust_Register.this, cust_phoneverify.class);
-                                                                            b.putExtra("Phonenumberr",phonenumber);
-                                                                            startActivity(b);
+                                                                            Intent c=new Intent(Cust_Register.this, cust_phoneverify.class);
+                                                                            c.putExtra("phonenumberr",phonenumber);
+                                                                            startActivity(c);
                                                                         }
                                                                     });
-
                                                                     AlertDialog alert = builder.create();
                                                                     alert.show();
                                                                 } else {

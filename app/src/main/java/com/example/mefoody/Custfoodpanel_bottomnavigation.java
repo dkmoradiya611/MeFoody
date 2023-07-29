@@ -1,16 +1,17 @@
 package com.example.mefoody;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.example.mefoody.customerFoodPanel.CustomerCartFragment;
 import com.example.mefoody.customerFoodPanel.CustomerHomeFragment;
 import com.example.mefoody.customerFoodPanel.CustomerOrdersFragment;
 import com.example.mefoody.customerFoodPanel.CustomerProfileFragment;
+import com.example.mefoody.customerFoodPanel.CustomerTrackFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -21,6 +22,21 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
         setContentView(R.layout.activity_custfoodpanel_bottomnavigation);
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
+        String name=getIntent().getStringExtra("PAGE");
+        if (name!=null)
+        {
+            if (name.equalsIgnoreCase("HomePage")){
+                loadfragment(new CustomerHomeFragment());
+            } else if (name.equalsIgnoreCase("Preparingpage")) {
+                loadfragment(new CustomerTrackFragment());
+            } else if (name.equalsIgnoreCase("DeliveryOrderPage")) {
+                loadfragment(new CustomerTrackFragment());
+            }else if (name.equalsIgnoreCase("Thankyoupage")) {
+                loadfragment(new CustomerHomeFragment());
+            }
+        }else {
+            loadfragment(new CustomerHomeFragment());
+        }
     }
 
     @Override
@@ -73,10 +89,10 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
                 fragment = new CustomerHomeFragment();
                 break;
         }*/
-        return loadcheffragment(fragment);
+        return loadfragment(fragment);
     }
 
-    private boolean loadcheffragment(Fragment fragment) {
+    private boolean loadfragment(Fragment fragment) {
 
         if(fragment != null)
         {

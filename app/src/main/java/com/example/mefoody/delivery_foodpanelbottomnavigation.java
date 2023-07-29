@@ -1,15 +1,13 @@
 package com.example.mefoody;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.mefoody.customerFoodPanel.CustomerCartFragment;
-import com.example.mefoody.customerFoodPanel.CustomerHomeFragment;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.example.mefoody.deliveryFoodPanel.DeliveryPendingOrderFragment;
 import com.example.mefoody.deliveryFoodPanel.DeliveryShipOrderFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +20,16 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
         setContentView(R.layout.activity_delivery_foodpanelbottomnavigation);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) BottomNavigationView navigationView = findViewById(R.id.delivery_bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
+        String name = getIntent().getStringExtra("PAGE");
+        if (name != null) {
+            if (name.equalsIgnoreCase("DeliveryOrderpage"))
+            {
+                loaddeliveryfragment(new DeliveryPendingOrderFragment());
+            }
+
+        } else {
+            loaddeliveryfragment(new DeliveryPendingOrderFragment());
+        }
     }
 
     @Override

@@ -37,10 +37,9 @@ public class Cust_Loginphone extends AppCompatActivity {
             public void onClick(View view) {
                 number=num.getText().toString().trim();
                 String phonenumber=cpp.getDefaultCountryCodeWithPlus()+number;
-                Intent b=new Intent(Cust_Loginphone.this,Cust_sendotp.class);
-
-                b.putExtra("Phonenumberr",phonenumber);
-                startActivity(b);
+                Intent c=new Intent(Cust_Loginphone.this,Cust_sendotp.class);
+                c.putExtra("Phonenumber",phonenumber);
+                startActivity(c);
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
