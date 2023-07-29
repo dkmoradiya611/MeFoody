@@ -108,6 +108,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/button_shape"
+            android:drawableLeft="@drawable/signup_white"
+            android:paddingLeft="18dp"
             android:text="Sign Up" />
     </LinearLayout>
 
