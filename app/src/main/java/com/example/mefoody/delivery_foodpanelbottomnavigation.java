@@ -17,7 +17,7 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delivery_foodpanelbottomnavigation);
+        setContentView(R.layout.activity_delivery_foodpanel_bottom_navigation);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) BottomNavigationView navigationView = findViewById(R.id.delivery_bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
         String name = getIntent().getStringExtra("PAGE");
@@ -68,7 +68,7 @@ public class delivery_foodpanelbottomnavigation extends AppCompatActivity implem
 
         if(fragment != null)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_containerbott,fragment).commit();
             return true;
         }
         return false;
