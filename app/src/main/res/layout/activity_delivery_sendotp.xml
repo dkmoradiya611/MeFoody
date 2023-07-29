@@ -57,15 +57,16 @@
             android:id="@+id/btnresendotpdel"
             android:textSize="25dp"
             android:text="Resend Otp"/>
+
         <TextView
+            android:id="@+id/text1del"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text=""
-            android:textSize="28dp"
-            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:id="@+id/text1del"/>
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="28sp" />
 
 
 
