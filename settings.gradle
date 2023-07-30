@@ -11,8 +11,17 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
 }
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositories {
+//        google()
+//        mavenCentral()
+//        jcenter()//Add this but this will give you deprecated API
+//    }
+//}
 //JAY SHREE KRISHNA
 rootProject.name = "MeFoody"
 include ':app'
