@@ -57,7 +57,7 @@ public class chef_postdish extends AppCompatActivity {
     TextInputLayout desc,qty,pri;
     String description,quantity,price,dishes;
     Uri imageuri;
-    private Uri mcropimageuri;
+    public Uri mcropimageuri;
     FirebaseStorage storage;
     StorageReference storageReference;
     FirebaseDatabase firebaseDatabase;
