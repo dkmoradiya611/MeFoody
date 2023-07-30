@@ -58,9 +58,9 @@ SwipeRefreshLayout swipeRefreshLayout;
                   @Override
                   public void onDataChange(@NonNull DataSnapshot snapshot) {
                       Customer custo =snapshot.getValue(Customer.class);
-                      State=custo.getState();
-                      City=custo.getCity();
-                      Area=custo.getArea();
+                      State = custo.getState();
+                      City  = custo.getCity();
+                      Area  = custo.getArea();
                       customermenu();
                   }
 

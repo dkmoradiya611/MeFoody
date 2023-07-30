@@ -117,6 +117,12 @@ public class chefsendotp extends AppCompatActivity {
                         .setCallbacks(mcallback)          // OnVerificationStateChangedCallbacks
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
+
+
+
+
+
+
 //        PhoneAuthProvider.getInstance().verifyPhoneNumber(
 //                number,
 //                60L,
@@ -164,5 +170,5 @@ public class chefsendotp extends AppCompatActivity {
                 }
             }
         });
-    }
+   }
 }
