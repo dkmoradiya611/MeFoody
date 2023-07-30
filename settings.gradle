@@ -13,5 +13,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+//JAY SHREE KRISHNA
 rootProject.name = "MeFoody"
 include ':app'
