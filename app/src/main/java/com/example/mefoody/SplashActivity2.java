@@ -20,7 +20,7 @@ public class SplashActivity2 extends AppCompatActivity {
                 startActivity(new Intent(SplashActivity2.this, MainMenu.class));
                 finish();
             }
-        },2500);
+        },2000);
 
     }
 }
