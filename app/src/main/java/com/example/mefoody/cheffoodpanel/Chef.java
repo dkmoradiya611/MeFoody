@@ -6,7 +6,7 @@ public class Chef {
 
     public Chef(String area, String city, String confirmPassword, String emailid, String fname, String house, String lname, String mobile, String password, String state) {
         this.Area=area;
-        //Jay Shree Krishna
+        //Jay Shree Krishn
         City = city;
         ConfirmPassword = confirmPassword;
         Emailid = emailid;
