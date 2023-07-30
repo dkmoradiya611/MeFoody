@@ -15,7 +15,9 @@
         android:theme="@style/Theme.MeFoody"
         tools:node="merge"
         tools:targetApi="31">
-
+        <activity
+            android:name=".cheffoodpanel.chef_postdish"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity2"
             android:exported="true">
@@ -93,9 +95,7 @@
             android:exported="false" />
         <activity
             android:name=".splash"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

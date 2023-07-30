@@ -3,6 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="postbackit">postback</string>
+    <string name="Postdish">postdish</string>
+    <string name="dishname">Dishname</string>
+    <string name="description">Description</string>
+    <string name="quantity">quantity</string>
+    <string name="price">price</string>
+    <string name="post">post</string>
 
     <string-array name="State">
         <item>Maharashtra</item>
@@ -36,7 +43,7 @@
         <item>Biryani</item>
         <item>Rajma</item>
         <item>Bhindi Fry</item>
-        <item>Dum Biryani</item>
+        <item>DumBiryani</item>
         <item>Rumali roti</item>
         <item>Dal Makhni</item>
         <item>Samosa</item>
@@ -53,7 +60,7 @@
         <item>Egg Curry</item>
         <item>Pomfret Fish</item>
         <item>Egg Bhurji</item>
-        <item>Dum chicken</item>
+        <item>Dumchicken</item>
         <item>Hyderabadi Chicken Biryni</item>
     </string-array>
 </resources>
