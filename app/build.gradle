@@ -43,15 +43,15 @@ dependencies {
         }
     }
 
-    implementation "com.airbnb.android:lottie:6.1.0"
+    implementation 'com.airbnb.android:lottie:6.1.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-analytics:21.3.0'
     implementation 'com.google.firebase:firebase-auth:22.1.0'
-    api "androidx.appcompat:appcompat:v7:28.0.0"
-    implementation "androidx.exifinterface:exifinterface:28.0.0"
+    api 'androidx.appcompat:appcompat:1.6.1:28.0.0'
+    implementation 'androidx.exifinterface:exifinterface:28.0.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.google.firebase:firebase-database:20.2.2'
     implementation 'com.google.firebase:firebase-storage:20.2.1'

@@ -3,10 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,6 +21,9 @@
         android:theme="@style/Theme.MeFoody"
         tools:node="merge"
         tools:targetApi="31">
+        <activity
+            android:name=".cheffoodpanel.UpdateDelete_Dish"
+            android:exported="false" />
         <activity
             android:name=".cheffoodpanel.chef_postdish"
             android:exported="true" />
@@ -98,13 +104,8 @@
             android:exported="false" />
         <activity
             android:name=".splash"
-            android:exported="true">
-
-        </activity>
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity">
-
-        </activity>
-
+            android:exported="true"></activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"></activity>
     </application>
 
 </manifest>
