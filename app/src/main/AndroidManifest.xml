@@ -23,7 +23,7 @@
         tools:targetApi="31">
         <activity
             android:name=".cheffoodpanel.UpdateDelete_Dish"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".cheffoodpanel.chef_postdish"
             android:exported="true" />
@@ -104,8 +104,12 @@
             android:exported="false" />
         <activity
             android:name=".splash"
-            android:exported="true"></activity>
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"></activity>
+            android:exported="true">
+
+        </activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity">
+
+        </activity>
     </application>
 
 </manifest>
