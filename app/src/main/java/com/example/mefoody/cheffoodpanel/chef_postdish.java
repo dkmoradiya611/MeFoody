@@ -70,15 +70,15 @@ public class chef_postdish extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_postdish);
 
-        storage=FirebaseStorage.getInstance();
-        storageReference=storage.getReference();
-        Dishes=(Spinner)findViewById(R.id.dishes);
-        desc=findViewById(R.id.description);
-        qty=findViewById(R.id.Quantity);
-        pri=findViewById(R.id.price);
-        post_dish=findViewById(R.id.post);
-        Fauth=FirebaseAuth.getInstance();
-        databaseReference=firebaseDatabase.getInstance().getReference("FoodDetails");
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
+        Dishes = findViewById(R.id.dishes1);
+        desc = findViewById(R.id.description1);
+        qty = findViewById(R.id.Quantity1);
+        pri = findViewById(R.id.price1);
+        post_dish = findViewById(R.id.post1);
+        Fauth = FirebaseAuth.getInstance();
+        databaseReference = firebaseDatabase.getInstance().getReference("FoodDetails");
 
         try {
             String userid=FirebaseAuth.getInstance().getCurrentUser().getUid();
