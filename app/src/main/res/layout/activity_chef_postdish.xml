@@ -4,128 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pic14"
-    tools:context=".cheffoodpanel.chef_postdish">
+    tools:context=".cheffoodpanel.chef_postdish"
+    android:background="@drawable/pic14">
 
     <ImageButton
         android:id="@+id/image_upload"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:background="@drawable/camerashapebtn"
-        android:contentDescription="@string/description"
         android:src="@drawable/ic_camera_24"
-        app:layout_constraintBottom_toBottomOf="@id/linear_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.363"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/linear_layout"
-        android:layout_width="209dp"
-        android:layout_height="38dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_upload"
         app:layout_constraintVertical_bias="0.15"
-        tools:ignore="ExtraText">
+        app:layout_constraintHorizontal_bias="0.53">
 
         <TextView
-            android:id="@+id/textView10"
             android:layout_width="105dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
+            android:id="@+id/textView"
             android:text="Dish Name"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:ignore="TextSizeCheck,VisualLintBounds" />
-        />
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/dishes"
             android:layout_width="162dp"
             android:layout_height="30dp"
             android:layout_marginLeft="12dp"
-            android:background="#ffffff"
+            android:background="#D0FFFFFF"
             android:entries="@array/DishName"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TextSizeCheck,TextSizeCheck,VisualLintBounds" />
+            tools:ignore="TouchTargetSizeCheck" />
+
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/description"
-        android:layout_width="200dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
+        android:id="@+id/description"
         android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout"
-        app:layout_constraintVertical_bias="0.057"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-        android:hint="@string/description"
-        android:inputType="text">
-    </com.google.android.material.textfield.TextInputEditText>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.53">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
         android:id="@+id/Quantity"
-        android:layout_width="200dp"
-        android:layout_height="66dp"
-        android:hint="Quantity"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:inputType="number"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintVertical_bias="0.078"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.53">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
         android:id="@+id/price"
-        android:layout_width="204dp"
-        android:layout_height="60dp"
-        android:hint="Price"
-        android:inputType="number"
         android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintTop_toBottomOf="@+id/Quantity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Quantity"
-        app:layout_constraintVertical_bias="0.282"
-        tools:ignore="SpeakableTextPresentCheck">
+        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.53">
 
-    </com.google.android.material.textfield.TextInputEditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/post"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
+        android:id="@+id/post"
         android:background="@drawable/btnred"
-        android:text="@string/post"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        android:text="Post"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price"
-        app:layout_constraintVertical_bias="0.498"
-        tools:ignore="TextContrastCheck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.30"
+        app:layout_constraintHorizontal_bias="0.498"
         android:textSize="20sp"/>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

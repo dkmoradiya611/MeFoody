@@ -20,6 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -29,6 +30,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -53,10 +55,12 @@ public class chef_postdish extends AppCompatActivity {
     ImageButton imageButton;
     Button post_dish;
     Spinner Dishes;
-    TextInputLayout desc,qty,pri;
+    TextInputLayout desc;
+    TextInputLayout qty;
+    TextInputLayout pri;
     String description,quantity,price,dishes;
     Uri imageuri;
-    public Uri mcropimageuri;
+    private Uri mcropimageuri;
     FirebaseStorage storage;
     StorageReference storageReference;
     FirebaseDatabase firebaseDatabase;
@@ -69,11 +73,10 @@ public class chef_postdish extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_postdish);
-
         storage=FirebaseStorage.getInstance();
         storageReference=storage.getReference();
         Dishes=(Spinner)findViewById(R.id.dishes);
-        desc=findViewById(R.id.description);
+        desc= (TextInputLayout) findViewById(R.id.description);
         qty=findViewById(R.id.Quantity);
         pri=findViewById(R.id.price);
         post_dish=findViewById(R.id.post);
@@ -216,9 +219,10 @@ public class chef_postdish extends AppCompatActivity {
         CropImage.startPickImageActivity(this);
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (mcropimageuri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             startCropImageActivity(mcropimageuri);
         } else {
