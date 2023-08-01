@@ -83,7 +83,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
         ID = getIntent().getStringExtra("updatedeletedish");
 
         String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        dataa = firebaseDatabase.getReference("Chef").child(userid);
+        dataa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
         dataa.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -146,8 +146,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
 
                 String useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 progressDialog = new ProgressDialog(UpdateDelete_Dish.this);
-                databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area)
-                        .child(useridd).child(ID);
+                databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area).child(useridd).child(ID);
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
