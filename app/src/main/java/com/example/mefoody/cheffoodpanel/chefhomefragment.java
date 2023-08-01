@@ -1,5 +1,7 @@
 package com.example.mefoody.cheffoodpanel;
 
+import static com.example.mefoody.R.id.recycle_menu;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -48,7 +50,7 @@ public class chefhomefragment extends Fragment {
         setHasOptionsMenu(true);
 
         // aa error ni khanar nathi.........
-        recyclerView= v.findViewById(R.id.recycle_menu);
+        recyclerView= v.findViewById(R.id.recycle_menu1);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         updateDishModelList = new ArrayList<>();

@@ -12,7 +12,6 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:background="@drawable/camerashapebtn"
-        android:contentDescription="@string/description"
         android:src="@drawable/ic_camera_24"
         app:layout_constraintBottom_toBottomOf="@id/linear_layout1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,61 +55,74 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TextSizeCheck,TextSizeCheck,VisualLintBounds" />
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/description1"
-        android:layout_width="200dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
+        android:id="@+id/description1"
+        android:layout_marginTop="10dp"
         android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout1"
-        app:layout_constraintVertical_bias="0.057"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-        android:hint="@string/description"
-        android:inputType="text">
-    </com.google.android.material.textfield.TextInputEditText>
+        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:hint="Description"
+            android:textColorHint="@color/white"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputEditText
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
         android:id="@+id/Quantity1"
-        android:layout_width="200dp"
-        android:layout_height="66dp"
-        android:hint="Quantity"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:inputType="number"
+        android:layout_marginTop="10dp"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description1"
-        app:layout_constraintVertical_bias="0.078"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.5">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:hint="Quantity"
+            android:textColorHint="@color/white"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
         android:id="@+id/price1"
-        android:layout_width="204dp"
-        android:layout_height="60dp"
-        android:hint="Price"
-        android:inputType="number"
+        android:layout_marginTop="10dp"
         android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Quantity1"
-        app:layout_constraintVertical_bias="0.282"
-        tools:ignore="SpeakableTextPresentCheck">
+        app:layout_constraintTop_toBottomOf="@+id/Quantity1"
+        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.5">
 
-    </com.google.android.material.textfield.TextInputEditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:hint="Price"
+            android:textColorHint="@color/white"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/post1"
@@ -123,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/price1"
         app:layout_constraintVertical_bias="0.498"
         tools:ignore="TextContrastCheck"
         android:textSize="20sp"/>

@@ -90,7 +90,7 @@ public class chef_postdish extends AppCompatActivity {
                     State=cheff.getState();
                     City=cheff.getCity();
                     Area=cheff.getArea();
-                    imageButton=findViewById(R.id.image_upload);
+                    imageButton=findViewById(R.id.image_upload1);
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
