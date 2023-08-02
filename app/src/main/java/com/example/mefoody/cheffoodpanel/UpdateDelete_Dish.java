@@ -88,7 +88,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Chef cheff = snapshot.getValue(Chef.class);
-                State = cheff.getState();
+                State = cheff.getStates();
                 City = cheff.getCity();
                 Area = cheff.getArea();
 

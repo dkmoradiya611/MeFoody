@@ -57,7 +57,7 @@ public class Chef {
         return Password;
     }
 
-    public String getState() {
+    public String getStates() {
         return State;
     }
 }

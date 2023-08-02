@@ -92,7 +92,7 @@ public class chef_postdish extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                     Chef cheff = snapshot.getValue(Chef.class);
-                    State = cheff.getState();
+                    State = cheff.getStates();
                     City = cheff.getCity();
                     Area = cheff.getArea();
                     imageButton = (ImageButton) findViewById(R.id.image_upload);
