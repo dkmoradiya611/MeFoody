@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".cheffoodpanel.UpdateDelete_Dish"
     android:background="@drawable/pic14">
-    
+
     <ImageButton
+        android:id="@+id/image_upload"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:id="@+id/image_upload"
         android:layout_marginTop="40dp"
         android:background="@drawable/camerashapebtn"
+        android:src="@drawable/ic_camera_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
-        android:src="@drawable/ic_camera_24"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:layout_width="280dp"
@@ -59,10 +60,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:hint="Description"
+            android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:inputType="text"/>
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -81,10 +83,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:hint="Quantity"
+            android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:inputType="text"/>
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -103,10 +106,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:hint="Price"
+            android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:inputType="text"/>
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,15 +127,15 @@
         app:layout_constraintHorizontal_bias="1.0">
 
         <Button
+            android:id="@+id/Updatedish"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/Updatedish"
             android:layout_gravity="center"
             android:background="@color/blueish"
-            android:textColor="@color/white"
+            android:padding="10dp"
             android:text="Update"
-            android:textSize="18sp"
-            android:padding="10dp"/>
+            android:textColor="#3E2723"
+            android:textSize="18sp" />
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
