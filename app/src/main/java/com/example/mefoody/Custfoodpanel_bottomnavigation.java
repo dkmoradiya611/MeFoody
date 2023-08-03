@@ -1,5 +1,7 @@
 package com.example.mefoody;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -23,6 +25,8 @@ public class Custfoodpanel_bottomnavigation extends AppCompatActivity  implement
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
         String name=getIntent().getStringExtra("PAGE");
+        FragmentManager fragmentManager=getFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         if (name!=null)
         {
             if (name.equalsIgnoreCase("HomePage")){

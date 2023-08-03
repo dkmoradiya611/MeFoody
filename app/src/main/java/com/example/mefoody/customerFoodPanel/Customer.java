@@ -14,7 +14,7 @@ public class Customer {
         ConfirmPassword = confirmPassword;
         EmailId = emailId;
         MobileNo = mobileNo;
-        State = state;
+        this.State = state;
         Area = area;
         LocalAddress = localAddress;
     }
