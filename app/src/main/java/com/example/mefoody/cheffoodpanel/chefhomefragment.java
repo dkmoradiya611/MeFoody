@@ -50,6 +50,7 @@ public class chefhomefragment extends Fragment {
         setHasOptionsMenu(true);
 
         // aa error ni khanar nathi.........
+
         recyclerView= v.findViewById(R.id.recycle_menu1);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

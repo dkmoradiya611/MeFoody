@@ -16,4 +16,6 @@
     <color name="darkgreen">#026909</color>
     <color name="DarkBlue">#250285</color>
     <color name="yourSelectedColor">#ff0000</color>
+    <color name="purple">#673AB7</color>
+    <color name="lightgreen">#8CDA91</color>
 </resources>

@@ -1,8 +1,10 @@
 package com.example.mefoody;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -10,12 +12,20 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.appbar.AppBarLayout;
+
 public class MainMenu extends AppCompatActivity {
     Button signinemail,signinphone,signup;
     ImageView bgimage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //getSupportActionBar().hide();
+        Window window=this.getWindow();
+        window.setStatusBarColor(this.getResources().getColor(R.color.lightgreen));
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.lightgreen)));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         final Animation zoomin= AnimationUtils.loadAnimation(this,R.anim.zoomin);
