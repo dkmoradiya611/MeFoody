@@ -75,7 +75,7 @@ public class Customer {
         MobileNo = mobileNo;
     }
 
-    public String getState() {
+    public String getStates() {
         return State;
     }
 
