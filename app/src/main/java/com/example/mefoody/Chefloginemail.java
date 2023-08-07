@@ -27,6 +27,7 @@ public class Chefloginemail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_chefloginemail);
         try {
             email=findViewById(R.id.txtemailchefloginemail);

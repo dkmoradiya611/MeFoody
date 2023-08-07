@@ -88,9 +88,11 @@ public class UpdateDelete_Dish extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Chef cheff = snapshot.getValue(Chef.class);
-                State = cheff.getStates();
-                City = cheff.getCity();
-                Area = cheff.getArea();
+                if(cheff!=null) {
+                    State = cheff.getStates();
+                    City = cheff.getCity();
+                    Area = cheff.getArea();
+                }
 
                 Update_dish.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -145,8 +147,14 @@ public class UpdateDelete_Dish extends AppCompatActivity {
                 });
 
                 String useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                progressDialog = new ProgressDialog(UpdateDelete_Dish.this);
-                databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area).child(useridd).child(ID);
+                if(useridd!=null)
+                {
+
+                   progressDialog = new ProgressDialog(UpdateDelete_Dish.this);
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area).child(useridd).child(ID);
+
+                }
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

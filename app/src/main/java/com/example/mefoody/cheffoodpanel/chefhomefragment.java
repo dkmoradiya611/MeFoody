@@ -56,15 +56,19 @@ public class chefhomefragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         updateDishModelList = new ArrayList<>();
         String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        dataa = FirebaseDatabase.getInstance().getReference("CHef").child(userid);
+        if(userid!=null) {
+            dataa = FirebaseDatabase.getInstance().getReference("CHef").child(userid);
+        }
         dataa.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Chef chef = snapshot.getValue(Chef.class);
-                State= chef.getStates();
-                City = chef.getCity();
-                Area = chef.getArea();
-                chefDishes();
+                if(chef!=null) {
+                    State = chef.getStates();
+                    City = chef.getCity();
+                    Area = chef.getArea();
+                    chefDishes();
+                }
             }
 
             @Override
