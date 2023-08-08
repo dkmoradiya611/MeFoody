@@ -51,7 +51,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
     ImageButton imageButton;
     Uri imageuri;
     String dburi;
-    private Uri mCropImageuri;
+    public Uri mCropImageuri;
     Button Update_dish,Delete_dish;
     String description,quantity,price,dishes,ChefId;
     String RendomUID;
@@ -150,14 +150,14 @@ public class UpdateDelete_Dish extends AppCompatActivity {
                     }
                 });
 
-                String useridd="";
-                useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                if(useridd!=null)
+                String userid="";
+                userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                if(userid!=null)
                 {
 
                    progressDialog = new ProgressDialog(UpdateDelete_Dish.this);
 
-                    databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area).child(useridd).child(ID);
+                    databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area).child(userid).child(ID);
 
                 }
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

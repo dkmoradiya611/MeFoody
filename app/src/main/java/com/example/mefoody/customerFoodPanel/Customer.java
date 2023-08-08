@@ -14,7 +14,11 @@ public class Customer {
         ConfirmPassword = confirmPassword;
         EmailId = emailId;
         MobileNo = mobileNo;
-        this.State = state;
+
+        // new change :- this.state nu khali state karyu chhe [ video ma hatu so ]
+        State = state;
+
+
         Area = area;
         LocalAddress = localAddress;
     }
