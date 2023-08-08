@@ -60,14 +60,17 @@ public class MainActivity extends AppCompatActivity {
                                 if (role.equals("Chef")) {
                                     Intent a = new Intent(MainActivity.this, cheffoodpanel_bottomnavigation.class);
                                     startActivity(a);
+                                    finish();
                                 }
                                 if (role.equals("Customer")) {
                                     Intent a = new Intent(MainActivity.this, Custfoodpanel_bottomnavigation.class);
                                     startActivity(a);
+                                    finish();
                                 }
                                 if (role.equals("DeliveryPerson")) {
                                     Intent a = new Intent(MainActivity.this, delivery_foodpanelbottomnavigation.class);
                                     startActivity(a);
+                                    finish();
                                 }
 
                             }
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                                 dialog.dismiss();
                                 Intent intent = new Intent(MainActivity.this, MainMenu.class);
                                 startActivity(intent);
+                                finish();
                             }
                         });
                         AlertDialog alert = builder.create();
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(MainActivity.this, MainMenu.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         }, 3000);

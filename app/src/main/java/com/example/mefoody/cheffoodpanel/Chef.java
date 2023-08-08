@@ -15,7 +15,7 @@ public class Chef {
         Lname = lname;
         Mobile = mobile;
         Password = password;
-        this.State = state;
+        State = state;
     }
 
     public Chef() {

@@ -165,6 +165,7 @@ public class chefsendotp extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     startActivity(new Intent(chefsendotp.this, cheffoodpanel_bottomnavigation.class));
+                    finish();
                 }else{
                     reusablecodeforall.ShowAlert(chefsendotp.this,"Error",task.getException().getMessage());
                 }

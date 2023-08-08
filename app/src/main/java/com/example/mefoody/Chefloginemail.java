@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -23,6 +24,7 @@ public class Chefloginemail extends AppCompatActivity {
     TextView forgotpassword, signup;
     FirebaseAuth Fauth;
     String emailid, pwd;
+    String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,45 +32,46 @@ public class Chefloginemail extends AppCompatActivity {
 
         setContentView(R.layout.activity_chefloginemail);
         try {
-            email=findViewById(R.id.txtemailchefloginemail);
-            pass=findViewById(R.id.txtpasschefloginemail);
-            signin=findViewById(R.id.btnloginchefloginemail);
-            signup=findViewById(R.id.crtactchefloginemail);
-            forgotpassword=findViewById(R.id.forgotpasschefloginemail);
-            signinphone=findViewById(R.id.btnphonechefloginemail);
+            email = findViewById(R.id.txtemailchefloginemail);
+            pass = findViewById(R.id.txtpasschefloginemail);
+            signin = findViewById(R.id.btnloginchefloginemail);
+            signup = findViewById(R.id.crtactchefloginemail);
+            forgotpassword = findViewById(R.id.forgotpasschefloginemail);
+            signinphone = findViewById(R.id.btnphonechefloginemail);
 
-            Fauth =FirebaseAuth.getInstance();
+            Fauth = FirebaseAuth.getInstance();
 
             signin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    emailid=email.getEditText().getText().toString().trim();
-                    pwd=pass.getEditText().getText().toString().trim();
+                    emailid = email.getEditText().getText().toString().trim();
+                    pwd = pass.getEditText().getText().toString().trim();
 
-                    if (isValid()){
-                        final ProgressDialog mdialog=new ProgressDialog(Chefloginemail.this);
+                    if (isValid()) {
+                        final ProgressDialog mdialog = new ProgressDialog(Chefloginemail.this);
                         mdialog.setCanceledOnTouchOutside(false);
                         mdialog.setCancelable(false);
                         mdialog.setMessage("Sign In Please wait...............");
                         mdialog.show();
 
-                        Fauth.signInWithEmailAndPassword(emailid,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        Fauth.signInWithEmailAndPassword(emailid, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()){
+                                if (task.isSuccessful()) {
                                     mdialog.dismiss();
 
-                                    if (Fauth.getCurrentUser().isEmailVerified()){
+                                    if (Fauth.getCurrentUser().isEmailVerified()) {
                                         mdialog.dismiss();
                                         Toast.makeText(Chefloginemail.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
-                                        Intent z =new Intent(Chefloginemail.this,cheffoodpanel_bottomnavigation.class);
+                                        Intent z = new Intent(Chefloginemail.this, cheffoodpanel_bottomnavigation.class);
                                         startActivity(z);
-                                    }else {
-                                        reusablecodeforall.ShowAlert(Chefloginemail.this,"Verification failed","You Have Not Verified Your Email");
+                                        finish();
+                                    } else {
+                                        reusablecodeforall.ShowAlert(Chefloginemail.this, "Verification failed", "You Have Not Verified Your Email");
                                     }
-                                }else {
+                                } else {
                                     mdialog.dismiss();
-                                    reusablecodeforall.ShowAlert(Chefloginemail.this,"Error",task.getException().getMessage());
+                                    reusablecodeforall.ShowAlert(Chefloginemail.this, "Error", task.getException().getMessage());
                                 }
                             }
                         });
@@ -79,26 +82,27 @@ public class Chefloginemail extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(Chefloginemail.this, Chefregister.class));
+                    finish();
                 }
             });
             forgotpassword.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(Chefloginemail.this,chefforgotpassword.class));
+                    startActivity(new Intent(Chefloginemail.this, chefforgotpassword.class));
+                    finish();
                 }
             });
             signinphone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(Chefloginemail.this, Chefloginphone.class));
+                    finish();
                 }
             });
-        }catch (Exception e){
-            Toast.makeText(this, e.getMessage()  , Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
-    String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     public boolean isValid() {
         email.setErrorEnabled(false);
@@ -111,20 +115,20 @@ public class Chefloginemail extends AppCompatActivity {
             email.setErrorEnabled(true);
             email.setError("Email is required");
         } else {
-            if (emailid.matches(emailpattern)){
-                isvalidemail=true;
-            }else {
+            if (emailid.matches(emailpattern)) {
+                isvalidemail = true;
+            } else {
                 email.setErrorEnabled(true);
                 email.setError("Invalid Email Address");
             }
         }
-        if (TextUtils.isEmpty(pwd)){
+        if (TextUtils.isEmpty(pwd)) {
             pass.setErrorEnabled(true);
             pass.setError("Password is Required");
-        }else {
-            isvalidpassword=true;
+        } else {
+            isvalidpassword = true;
         }
-        isvalid=(isvalidemail && isvalidpassword)?true:false;
+        isvalid = (isvalidemail && isvalidpassword) ? true : false;
         return isvalid;
     }
 

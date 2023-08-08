@@ -41,18 +41,21 @@ public class Chefloginphone extends AppCompatActivity {
                 Intent b=new Intent(Chefloginphone.this,chefsendotp.class);
                 b.putExtra("phonenumber",phonenumber);
                 startActivity(b);
+                finish();
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Chefloginphone.this, Chefregister.class));
+                finish();
             }
         });
         signinemail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Chefloginphone.this, Chefloginemail.class));
+                finish();
             }
         });
     }
