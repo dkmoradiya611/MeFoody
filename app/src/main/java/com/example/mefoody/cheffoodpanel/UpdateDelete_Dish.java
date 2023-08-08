@@ -82,8 +82,12 @@ public class UpdateDelete_Dish extends AppCompatActivity {
         Delete_dish = findViewById(R.id.Deletedish);
         ID = getIntent().getStringExtra("updatedeletedish");
 
-        String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        dataa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
+        String userid="";
+        userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        if(userid!=null)
+        {
+            dataa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
+        }
         dataa.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -146,7 +150,8 @@ public class UpdateDelete_Dish extends AppCompatActivity {
                     }
                 });
 
-                String useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                String useridd="";
+                useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 if(useridd!=null)
                 {
 
