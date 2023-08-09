@@ -179,7 +179,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
                 });
 
                 Fauth = FirebaseAuth.getInstance();
-                databaseReference = firebaseDatabase.getReference("FoodDetails");
+                databaseReference = firebaseDatabase.getInstance().getReference("FoodDetails");
                 storage = FirebaseStorage.getInstance();
                 storageReference = storage.getReference();
                 imageButton.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +202,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
 
         ChefId =FirebaseAuth.getInstance().getCurrentUser().getUid();
         FoodDetails info = new FoodDetails(dishes,quantity,price,description,dburi,ID,ChefId);
-        firebaseDatabase.getReference("FoodDetails").child(State).child(City).child(Area)
+        firebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area)
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(ID)
                 .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
