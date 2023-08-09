@@ -1,6 +1,8 @@
 package com.example.mefoody.cheffoodpanel;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -50,7 +52,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
     ImageButton imageButton;
     Uri imageuri;
     String dburi;
-    public Uri mCropImageuri;
+    private Uri mCropImageuri;
     Button Update_dish,Delete_dish;
     String description,quantity,price,dishes,ChefId;
     String RendomUID;
@@ -149,14 +151,14 @@ public class UpdateDelete_Dish extends AppCompatActivity {
                     }
                 });
 
-                String userid="";
-                userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                if(userid!=null)
+                String useridd="";
+                useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                if(useridd!=null)
                 {
 
                    progressDialog = new ProgressDialog(UpdateDelete_Dish.this);
 
-                    databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(City).child(userid);//.child(ID);
+                    databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(City).child(useridd);//.child(ID);
                     //.child(State).child(Area)
                 }
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -198,11 +200,11 @@ public class UpdateDelete_Dish extends AppCompatActivity {
         });
     }
 
-    private void updatedesc(String dburi) {
+    private void updatedesc(String uri) {
 
         ChefId =FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FoodDetails info = new FoodDetails(dishes,quantity,price,description,dburi,ID,ChefId);
-        firebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area)
+        FoodDetails info = new FoodDetails(dishes,quantity,price,description,uri,ID,ChefId);
+        firebaseDatabase.getInstance().getReference("FoodDetails").child(City)
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(ID)
                 .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -313,18 +315,28 @@ public class UpdateDelete_Dish extends AppCompatActivity {
     @SuppressLint("NewApi")
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
-        if(resultCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
-            CropImage.ActivityResult result=CropImage.getActivityResult(data);
-            if(resultCode==RESULT_OK){
-                ((ImageButton) findViewById(R.id.image_upload)).setImageURI(result.getUri());
-                Toast.makeText(this, "Cropped Successfully!" + result.getSampleSize(), Toast.LENGTH_SHORT).show();
-            }
-            else if(resultCode==CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE)
-            {
-                Toast.makeText(this, "Failed to Crop"+result.getError(), Toast.LENGTH_SHORT).show();
+        if (requestCode == CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            imageuri = CropImage.getPickImageResultUri(this, data);
+
+            if (CropImage.isReadExternalStoragePermissionsRequired(this, imageuri)) {
+                mCropImageuri = imageuri;
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
+
+            } else {
+
+                startCropImageActivity(imageuri);
             }
         }
 
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                ((ImageButton) findViewById(R.id.image_upload)).setImageURI(result.getUri());
+                Toast.makeText(this, "Cropped Successfully" + result.getSampleSize(), Toast.LENGTH_SHORT).show();
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Toast.makeText(this, "cropping failed" + result.getError(), Toast.LENGTH_SHORT).show();
+            }
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
