@@ -83,7 +83,7 @@ public class UpdateDelete_Dish extends AppCompatActivity {
 
         String userid="";
         userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        if(userid!=null)
+        if(userid != null)
         {
             dataa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
         }
