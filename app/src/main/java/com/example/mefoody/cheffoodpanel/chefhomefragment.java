@@ -1,7 +1,5 @@
 package com.example.mefoody.cheffoodpanel;
 
-import static com.example.mefoody.R.id.recycle_menu;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,8 +24,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,19 +52,17 @@ public class chefhomefragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         updateDishModelList = new ArrayList<>();
         String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        if(userid!=null) {
-            dataa = FirebaseDatabase.getInstance().getReference("CHef").child(userid);
-        }
+        dataa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
         dataa.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Chef chef = snapshot.getValue(Chef.class);
-                if(chef!=null) {
+                //if(chef!=null) {
                     State = chef.getStates();
                     City = chef.getCity();
                     Area = chef.getArea();
                     chefDishes();
-                }
+                //}
             }
 
             @Override
@@ -84,7 +78,8 @@ public class chefhomefragment extends Fragment {
     private void chefDishes() {
 
         String useridd =FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(State).child(City).child(Area).child(useridd);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("FoodDetails").child(City).child(useridd);
+        //.child(State)child(Area).
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
