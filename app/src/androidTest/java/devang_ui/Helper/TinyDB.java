@@ -31,7 +31,7 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.zwagii.Domain.FoodDomain;
+import com.example.mefoody.Domain.FoodDomain;
 import com.google.gson.Gson;
 
 import java.io.File;
